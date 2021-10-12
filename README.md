@@ -1,6 +1,6 @@
 # Mootal Slug
 - 팀명 : 메탈 슬라임
-<br>
+
 ## Contributor
 |이름|GitHub|
 |---|---|
