@@ -11,6 +11,9 @@ public class bulletControl : MonoBehaviour
     void Start()
     {
         //총알 기본 회전값 설정
+        Vector3 pos = this.transform.position;
+        pos.z = -1;
+        this.transform.position = pos;
         this.transform.localEulerAngles = new Vector3(0, 180, 0);
     }
 
