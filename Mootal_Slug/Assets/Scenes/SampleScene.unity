@@ -538,7 +538,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bab17e85dddf7e489b0b5fc0565366d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1675131195940850167, guid: 84786cbfeae6476489d7c73d0ecf6ba5, type: 3}
+  bulletPrefab1: {fileID: 1675131195940850167, guid: 84786cbfeae6476489d7c73d0ecf6ba5, type: 3}
+  bulletPrefab2: {fileID: 8295028671072377002, guid: dc874acd841c63446af89ebae3dde7e1, type: 3}
+  people: {fileID: 2007481756}
+  isPeople: 0
+  isShoot: 0
+  isShoot_down: 0
+  isShoot_down2: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +639,7 @@ GameObject:
   - component: {fileID: 680159129}
   - component: {fileID: 680159130}
   - component: {fileID: 680159131}
+  - component: {fileID: 680159132}
   m_Layer: 0
   m_Name: e_bottom
   m_TagString: Untagged
@@ -724,6 +731,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &680159132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680159128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc55ca0188faeb14295232d104500402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &942926794
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +754,7 @@ GameObject:
   - component: {fileID: 942926795}
   - component: {fileID: 942926796}
   - component: {fileID: 942926797}
+  - component: {fileID: 942926798}
   m_Layer: 0
   m_Name: e_left
   m_TagString: Untagged
@@ -826,6 +846,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &942926798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 942926794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18af8da2ae9748e4e94dc65dcb73e701, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ec: {fileID: 359503969}
 --- !u!1 &1223641213
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,6 +972,7 @@ GameObject:
   - component: {fileID: 1291080448}
   - component: {fileID: 1291080449}
   - component: {fileID: 1291080450}
+  - component: {fileID: 1291080451}
   m_Layer: 0
   m_Name: e_top
   m_TagString: Untagged
@@ -1030,6 +1064,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1291080451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291080447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50eee2b5da0e1149bb10cb601c517a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ec: {fileID: 359503969}
 --- !u!1 &1311816963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,6 +1190,7 @@ GameObject:
   - component: {fileID: 1327555025}
   - component: {fileID: 1327555026}
   - component: {fileID: 1327555027}
+  - component: {fileID: 1327555028}
   m_Layer: 0
   m_Name: e_right
   m_TagString: Untagged
@@ -1234,6 +1282,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1327555028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327555024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbec1a34db635cb47806c663c48ea9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ec: {fileID: 359503969}
 --- !u!1 &1572484117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,13 +1612,14 @@ GameObject:
   - component: {fileID: 2007481757}
   - component: {fileID: 2007481759}
   - component: {fileID: 2007481758}
+  - component: {fileID: 2007481760}
   m_Layer: 0
   m_Name: e_people
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2007481757
 Transform:
   m_ObjectHideFlags: 0
@@ -1642,3 +1704,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2007481760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007481756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9a0973c09a226e41b7159cacf5c81ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ec: {fileID: 359503969}
