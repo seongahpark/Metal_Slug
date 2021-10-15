@@ -18,10 +18,15 @@ public class enemyControl : MonoBehaviour
     public bool isShoot_down2 = false;
     private float delayTime = 1.0f;
     private bool isDelay = false;
+    public bool isclear = false;
+    public bool e_isAttack = false;
+    public float blinkTime = 2f;
+
+    [SerializeField] private int enemyHP = 300;
     // Start is called before the first frame update
     void Start()
     {
- 
+
     }
 
     // Update is called once per frame
@@ -52,6 +57,17 @@ public class enemyControl : MonoBehaviour
             people.SetActive(true);
             StartCoroutine(Disabled(people, 1.6f));
             peopleTime += 5.0f;
+        }
+
+        //e_isAttack = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "P_Bullet")
+        {
+            e_isAttack = true;
+            enemyIsAttackted();
         }
     }
 
@@ -104,5 +120,22 @@ public class enemyControl : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         obj.SetActive(false);
+    }
+
+    public void enemyIsAttackted()
+    {
+        enemyHP--;
+        if(enemyHP <= 0)
+        {
+            isclear = true;
+        }
+    }
+
+    public IEnumerator Blink(SpriteRenderer sr)
+    {
+        sr.color = new Color(1, 0.5f, 0.5f, 1);
+        yield return new WaitForSeconds(blinkTime);
+        sr.color = new Color(1, 1, 1, 1);
+        e_isAttack = false;
     }
 }
