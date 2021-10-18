@@ -7,7 +7,10 @@ public class enemyControl : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab1 = null;
     [SerializeField] private GameObject bulletPrefab2 = null;
     [SerializeField] private GameObject people = null;
-
+    [SerializeField] private GameObject isAttacktedPrefab = null;
+    [SerializeField] private GameObject explosionPrefab = null;
+    [SerializeField] private GameObject explosionBigPrefab = null;
+ 
     private bool go_left = true;
     float attackTime = 0;
     float max_attackTime = 3.0f;
@@ -22,7 +25,11 @@ public class enemyControl : MonoBehaviour
     public bool e_isAttack = false;
     public float blinkTime = 2f;
 
-    [SerializeField] private int enemyHP = 300;
+    public static float maxEnemyHP = 300;
+    [SerializeField] private float enemyHP = maxEnemyHP;
+    private float enemyHP_10per = maxEnemyHP * 0.1f;
+
+    public bool isfired = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,7 +66,6 @@ public class enemyControl : MonoBehaviour
             peopleTime += 5.0f;
         }
 
-        //e_isAttack = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -125,10 +131,40 @@ public class enemyControl : MonoBehaviour
     public void enemyIsAttackted()
     {
         enemyHP--;
-        if(enemyHP <= 0)
+
+        Vector3 pos = this.transform.position;
+        pos.x -= 1.8f;
+        pos.y += 1.5f;
+        pos.z = -2.0f;
+        Instantiate(isAttacktedPrefab, pos, Quaternion.identity);
+        if (enemyHP <= enemyHP_10per) isfired = true;
+        if (enemyHP <= 0)
         {
             isclear = true;
+            enemyDeadMotion();
         }
+    }
+
+    private void enemyDeadMotion()
+    {
+        for (int i=0; i<10; i++)
+        {
+            StartCoroutine(enemyExplosion());
+        }
+        Vector3 pos = this.transform.position;
+        pos.y += 1.0f;
+        pos.z = -2;
+        Instantiate(explosionBigPrefab, pos, Quaternion.identity);
+    }
+
+    IEnumerator enemyExplosion()
+    {
+        Vector3 pos = this.transform.position;
+        pos.x += Random.Range(-2.5f, 2.5f);
+        pos.y += Random.Range(-1.0f, 1.0f);
+        pos.z = -2;
+        Instantiate(explosionPrefab, pos, Quaternion.identity);
+        yield return new WaitForSeconds(blinkTime);
     }
 
     public IEnumerator Blink(SpriteRenderer sr)
