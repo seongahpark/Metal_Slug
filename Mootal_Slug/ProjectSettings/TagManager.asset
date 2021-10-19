@@ -8,6 +8,10 @@ TagManager:
   - Bullet
   - P_Bullet
   - Fire
+  - Ground
+  - border
+  - Bossborder
+  - M_Enemy
   layers:
   - Default
   - TransparentFX

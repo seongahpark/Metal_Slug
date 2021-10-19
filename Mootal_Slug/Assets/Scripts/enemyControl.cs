@@ -23,13 +23,16 @@ public class enemyControl : MonoBehaviour
     private bool isDelay = false;
     public bool isclear = false;
     public bool e_isAttack = false;
-    public float blinkTime = 2f;
+    public float blinkTime = 1.5f;
 
-    public static float maxEnemyHP = 300;
+    public static float maxEnemyHP = 100;
     [SerializeField] private float enemyHP = maxEnemyHP;
     private float enemyHP_10per = maxEnemyHP * 0.1f;
 
     public bool isfired = false;
+    private bool isStop = true; // 정지상태
+    private float moveTime = 2.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,15 +42,15 @@ public class enemyControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.position.x <= 0 && go_left)
+        moveTime -= Time.deltaTime;
+        if(moveTime <= 0)
         {
-            go_left = false;
+            moveTime = Random.Range(2.0f, 5.0f);
+            isStop = !isStop;
         }
-        if(this.transform.position.x >= 5 && !go_left)
-        {
-            go_left = true;
-        }
-        EnemyMove(go_left);
+            
+        MoveState();
+        if(!isStop) EnemyMove(go_left);
 
         attackTime += Time.deltaTime;
         if (attackTime > max_attackTime)
@@ -77,6 +80,17 @@ public class enemyControl : MonoBehaviour
         }
     }
 
+    private void MoveState()
+    {
+        if (this.transform.position.x <= 23 && go_left)
+        {
+            go_left = false;
+        }
+        if (this.transform.position.x >= 27 && !go_left)
+        {
+            go_left = true;
+        }
+    }
     private void EnemyMove(bool go_left)
     {
         if (go_left)
@@ -96,7 +110,7 @@ public class enemyControl : MonoBehaviour
         if (!isDelay)
         {
             isDelay = true;
-            StartCoroutine(makeBullet(bulletPrefab1, 2.0f, 1.6f));
+            StartCoroutine(makeBullet(bulletPrefab1, 1.5f, 1.0f));
         }
     }
 
@@ -107,7 +121,7 @@ public class enemyControl : MonoBehaviour
         if (!isDelay)
         {
             isDelay = true;
-            StartCoroutine(makeBullet(bulletPrefab2, 1.5f, 0.6f));
+            StartCoroutine(makeBullet(bulletPrefab2, 1.0f, 0.5f));
         }
     }
 
