@@ -32,6 +32,6 @@ public class bulletControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Enemy") Destroy(gameObject);
+        if(collision.transform.tag == "Player") Destroy(gameObject);
     }
 }
