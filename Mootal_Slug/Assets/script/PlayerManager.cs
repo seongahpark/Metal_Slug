@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
     {
         
         rb = GetComponent<Rigidbody2D>();
-        
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     
 

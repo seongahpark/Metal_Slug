@@ -31,8 +31,8 @@ public class enemyControl : MonoBehaviour
     private float enemyHP_10per = maxEnemyHP * 0.1f;
 
     public bool isfired = false;
-    private bool isStop = true; // 정지상태
-    private float moveTime = 2.0f;
+    private bool isStop = false; // 정지상태
+    private float moveTime = 5.0f;
 
     private bool deadMotion = false;
     // Start is called before the first frame update
@@ -44,7 +44,7 @@ public class enemyControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.chkBossStage && !isclear)
+        if (gm.chkBossStage && !gm.gameClear)
         {
             MoveTime(); // 보스 움직임 / 멈춤 제어
             MoveState(); // 왼쪽, 오른쪽 방향 전환
@@ -62,6 +62,7 @@ public class enemyControl : MonoBehaviour
 
             if (enemyHP <= 0)
             {
+                gm.gameClear = true;
                 isclear = true;
                 if (!deadMotion) enemyDeadMotion();
                 Destroy(gameObject, 2.0f);
@@ -94,7 +95,7 @@ public class enemyControl : MonoBehaviour
         {
             go_left = false;
         }
-        if (this.transform.position.x >= 27 && !go_left)
+        if (this.transform.position.x >= 26 && !go_left)
         {
             go_left = true;
         }

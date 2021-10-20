@@ -5,12 +5,14 @@ using UnityEngine;
 public class MiraEnemyControl : MonoBehaviour
 {
     [SerializeField] public enemyControl ec;
+    private Collider2D collison;
     private Animator animator;
     private SpriteRenderer rend;
     private bool isMove = false;
     [SerializeField] private int miniEnemyHp = 10;
     [SerializeField] private int state = 0;
     [SerializeField] private float stateTime = 1.5f;
+
     //state 0 : 정지, 1 : 걷기, 2 : 하울링, 3 : destroyed
 
     // Start is called before the first frame update
@@ -19,6 +21,7 @@ public class MiraEnemyControl : MonoBehaviour
         ec = GameObject.Find("Enemy").GetComponent<enemyControl>();
         rend = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        collison = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class MiraEnemyControl : MonoBehaviour
 
         if (miniEnemyHp <= 0)
         {
+            collison.isTrigger = true;
             animator.SetBool("isDestroyed", true);
             Destroy(this.gameObject, 1.0f);
         }

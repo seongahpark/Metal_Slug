@@ -21,14 +21,14 @@ public class enemyBottom : MonoBehaviour
     {
         if (gm.chkBossStage)
         {
-            if (!ec.isclear)
+            if (!gm.gameClear)
             {
                 if (ec.e_isAttack)
                 {
                     StartCoroutine(ec.Blink(rend));
                 }
             }
-            if (ec.isclear)
+            if (gm.gameClear)
             {
                 animator.SetBool("isDestroyed", true);
             }

@@ -8,6 +8,7 @@ public class UFOEnemyControl : MonoBehaviour
     [SerializeField] public enemyControl ec;
     private Animator animator;
     private SpriteRenderer rend;
+    private Collider2D collision;
 
     [SerializeField] private int miniEnemyHp = 10;
     private static float attackMaxTime = 3.0f;
@@ -21,6 +22,7 @@ public class UFOEnemyControl : MonoBehaviour
         ec = GameObject.Find("Enemy").GetComponent<enemyControl>();
         rend = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        collision = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class UFOEnemyControl : MonoBehaviour
 
         if (miniEnemyHp <= 0)
         {
+            collision.isTrigger = true;
             animator.SetBool("isDestroyed", true);
             Destroy(this.gameObject, 2.0f);
         }

@@ -9,7 +9,6 @@ public class GameStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -18,7 +17,6 @@ public class GameStart : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene(1);
-
         }
 
     }
