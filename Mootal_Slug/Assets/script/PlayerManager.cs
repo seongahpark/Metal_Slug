@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
     public GameManager gm;
-
+    [SerializeField] private Text lifeText;
     public static int life=2;
 
     float speed = 3;
@@ -16,8 +17,6 @@ public class PlayerManager : MonoBehaviour
     bool isTouchLeft; // 왼쪽 끝에 도달했는지
     bool bosscheck;   //보스 리스폰 지점 도달
     bool ishittable;  
-    
-   
 
 
     public GameObject Stand; // 서있는 상태
@@ -52,7 +51,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        
+        lifeText.text = "1UP = " + life.ToString(); // 생명 표시
         ishittable = false;
         Player_Down.SetActive(false);
         Player_Die.SetActive(false);

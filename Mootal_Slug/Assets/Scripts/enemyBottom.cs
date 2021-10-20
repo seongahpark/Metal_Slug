@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyBottom : MonoBehaviour
 {
+    public GameManager gm;
     [SerializeField] enemyControl ec;
     private Animator animator;
     private SpriteRenderer rend;
@@ -18,14 +19,19 @@ public class enemyBottom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ec.isclear)
+        if (gm.chkBossStage)
         {
-            animator.SetBool("isDestroyed", true);
-        }
-
-        if (ec.e_isAttack)
-        {
-            StartCoroutine(ec.Blink(rend));
+            if (!ec.isclear)
+            {
+                if (ec.e_isAttack)
+                {
+                    StartCoroutine(ec.Blink(rend));
+                }
+            }
+            if (ec.isclear)
+            {
+                animator.SetBool("isDestroyed", true);
+            }
         }
     }
 }

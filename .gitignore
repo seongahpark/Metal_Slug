@@ -11,7 +11,7 @@ Mootal_Slug/[Ll]ogs/
 Mootal_Slug/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
-Mootal_Slug/[Aa]ssets/**/*.meta
+!Mootal_Slug/[Aa]ssets/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # Mootal_Slug/[Aa]ssets/AssetStoreTools*

@@ -418,6 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18af8da2ae9748e4e94dc65dcb73e701, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 1969376796}
   ec: {fileID: 1938645816}
 --- !u!95 &147121314
 Animator:
@@ -534,6 +535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc55ca0188faeb14295232d104500402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 1969376796}
   ec: {fileID: 1938645816}
 --- !u!95 &302509691
 Animator:
@@ -812,6 +814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbec1a34db635cb47806c663c48ea9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 1969376796}
   ec: {fileID: 1938645816}
 --- !u!95 &395543223
 Animator:
@@ -1202,7 +1205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0.74, z: -10}
+  m_LocalPosition: {x: -21.905901, y: 0.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1998,8 +2001,9 @@ GameObject:
   - component: {fileID: 1213997153}
   - component: {fileID: 1213997155}
   - component: {fileID: 1213997154}
+  - component: {fileID: 1213997156}
   m_Layer: 5
-  m_Name: Text
+  m_Name: T_Life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2014,14 +2018,14 @@ RectTransform:
   m_GameObject: {fileID: 1213997152}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0431, y: 1.0431, z: 1.0431}
   m_Children: []
   m_Father: {fileID: 2092009780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -288, y: 194}
+  m_AnchoredPosition: {x: 297.8, y: 167.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1213997154
@@ -2037,7 +2041,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.990566, g: 0.24264447, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.515494, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2045,19 +2049,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: af61d2a239c0c4e4281bc702ec212c3a, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1UP=
+  m_Text: 1UP = 1
 --- !u!222 &1213997155
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2066,6 +2070,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213997152}
   m_CullTransparentMesh: 1
+--- !u!114 &1213997156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213997152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1.42, y: 1.76}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1239644768
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,6 +2470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50eee2b5da0e1149bb10cb601c517a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gm: {fileID: 1969376796}
   ec: {fileID: 1938645816}
 --- !u!95 &1515401243
 Animator:
@@ -3939,6 +3959,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chkBossStage: 0
+  gameStart: 0
+  gameOver: 0
 --- !u!4 &1969376797
 Transform:
   m_ObjectHideFlags: 0
@@ -4387,6 +4409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 1969376796}
+  lifeText: {fileID: 1213997154}
   Stand: {fileID: 1960353371}
   Player_Down: {fileID: 1878938289}
   CM_camar: {fileID: 1506248491}

@@ -38,13 +38,13 @@ public class enemyControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gm.chkBossStage)
+        if (gm.chkBossStage && !isclear)
         {
             MoveTime(); // 보스 움직임 / 멈춤 제어
             MoveState(); // 왼쪽, 오른쪽 방향 전환
@@ -71,7 +71,7 @@ public class enemyControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "P_Bullet" && enemyHP > 0)
+        if(collision.transform.tag == "P_Bullet" && enemyHP > 0 && gm.chkBossStage)
         {
             e_isAttack = true;
             enemyIsAttackted();
