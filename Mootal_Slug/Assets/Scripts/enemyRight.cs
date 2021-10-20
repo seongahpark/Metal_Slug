@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class enemyRight : MonoBehaviour
 {
+    public GameManager gm;
     [SerializeField] private enemyControl ec;
     Animator animator;
     SpriteRenderer rend;
@@ -18,19 +19,24 @@ public class enemyRight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ec.isShoot_down)
+        if (gm.chkBossStage)
         {
-            animator.SetTrigger("isShoot");
-            ec.isShoot_down = false;
-        }
-
-        if (ec.isclear)
-        {
-            this.gameObject.SetActive(false);
-        }
-        if (ec.e_isAttack)
-        {
-            StartCoroutine(ec.Blink(rend));
+            if (!ec.isclear)
+            {
+                if (ec.isShoot_down)
+                {
+                    animator.SetTrigger("isShoot");
+                    ec.isShoot_down = false;
+                }
+                if (ec.e_isAttack)
+                {
+                    StartCoroutine(ec.Blink(rend));
+                }
+            }
+            if (ec.isclear)
+            {
+                this.gameObject.SetActive(false);
+            }
         }
     }
 }

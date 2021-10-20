@@ -1,0 +1,1272 @@
+fileFormatVersion: 2
+guid: 377058f03db579a428413a0735d06022
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6316954528039599549
+    second: Neo Geo NGCD - Metal Slug - Player Status_0
+  - first:
+      213: -1135195958553408322
+    second: Neo Geo NGCD - Metal Slug - Player Status_1
+  - first:
+      213: 2913615712112838576
+    second: Neo Geo NGCD - Metal Slug - Player Status_2
+  - first:
+      213: -5791000149425901390
+    second: Neo Geo NGCD - Metal Slug - Player Status_3
+  - first:
+      213: -781918867871067887
+    second: Neo Geo NGCD - Metal Slug - Player Status_4
+  - first:
+      213: 3995248195901227618
+    second: Neo Geo NGCD - Metal Slug - Player Status_5
+  - first:
+      213: -7758348881519322607
+    second: Neo Geo NGCD - Metal Slug - Player Status_6
+  - first:
+      213: -8028762336490310868
+    second: Neo Geo NGCD - Metal Slug - Player Status_7
+  - first:
+      213: -2528245539867298199
+    second: Neo Geo NGCD - Metal Slug - Player Status_8
+  - first:
+      213: -5390968974710421673
+    second: Neo Geo NGCD - Metal Slug - Player Status_9
+  - first:
+      213: -764149883841337526
+    second: Neo Geo NGCD - Metal Slug - Player Status_10
+  - first:
+      213: -3911728122891955959
+    second: Neo Geo NGCD - Metal Slug - Player Status_11
+  - first:
+      213: 5274136982440876450
+    second: Neo Geo NGCD - Metal Slug - Player Status_12
+  - first:
+      213: 4511893553550943929
+    second: Neo Geo NGCD - Metal Slug - Player Status_13
+  - first:
+      213: -2050517951311461673
+    second: Neo Geo NGCD - Metal Slug - Player Status_14
+  - first:
+      213: 8765256110649380259
+    second: Neo Geo NGCD - Metal Slug - Player Status_15
+  - first:
+      213: 8632437173831272876
+    second: Neo Geo NGCD - Metal Slug - Player Status_16
+  - first:
+      213: 1471619085579774415
+    second: Neo Geo NGCD - Metal Slug - Player Status_17
+  - first:
+      213: 8736611067137372458
+    second: Neo Geo NGCD - Metal Slug - Player Status_18
+  - first:
+      213: 3263688494661832839
+    second: Neo Geo NGCD - Metal Slug - Player Status_19
+  - first:
+      213: -548096106365079450
+    second: Neo Geo NGCD - Metal Slug - Player Status_20
+  - first:
+      213: 417775906916390700
+    second: Neo Geo NGCD - Metal Slug - Player Status_21
+  - first:
+      213: 1287483108623853794
+    second: Neo Geo NGCD - Metal Slug - Player Status_22
+  - first:
+      213: -4132894037703568316
+    second: Neo Geo NGCD - Metal Slug - Player Status_23
+  - first:
+      213: 5979218920098427994
+    second: Neo Geo NGCD - Metal Slug - Player Status_24
+  - first:
+      213: 4201727444596913848
+    second: Neo Geo NGCD - Metal Slug - Player Status_25
+  - first:
+      213: 702833981931445469
+    second: Neo Geo NGCD - Metal Slug - Player Status_26
+  - first:
+      213: -2440868167915725072
+    second: Neo Geo NGCD - Metal Slug - Player Status_27
+  - first:
+      213: -8417736917417367947
+    second: Neo Geo NGCD - Metal Slug - Player Status_28
+  - first:
+      213: -2102078808389786262
+    second: Neo Geo NGCD - Metal Slug - Player Status_29
+  - first:
+      213: -8839924254357052918
+    second: Neo Geo NGCD - Metal Slug - Player Status_30
+  - first:
+      213: -722452976640164566
+    second: Neo Geo NGCD - Metal Slug - Player Status_31
+  - first:
+      213: -3759403070700494861
+    second: Neo Geo NGCD - Metal Slug - Player Status_32
+  - first:
+      213: -3659518964530798090
+    second: Neo Geo NGCD - Metal Slug - Player Status_33
+  - first:
+      213: -6793790174506631422
+    second: Neo Geo NGCD - Metal Slug - Player Status_34
+  - first:
+      213: 1557029318256084242
+    second: Neo Geo NGCD - Metal Slug - Player Status_35
+  - first:
+      213: 1400984252609992944
+    second: Neo Geo NGCD - Metal Slug - Player Status_36
+  - first:
+      213: 898611396513746354
+    second: Neo Geo NGCD - Metal Slug - Player Status_37
+  - first:
+      213: -3608668735164039729
+    second: Neo Geo NGCD - Metal Slug - Player Status_38
+  - first:
+      213: 2445942403544140326
+    second: Neo Geo NGCD - Metal Slug - Player Status_39
+  - first:
+      213: 2857527926302462519
+    second: Neo Geo NGCD - Metal Slug - Player Status_40
+  - first:
+      213: 7745195281349162863
+    second: Neo Geo NGCD - Metal Slug - Player Status_41
+  - first:
+      213: -8390825942855234471
+    second: Neo Geo NGCD - Metal Slug - Player Status_42
+  - first:
+      213: 6983587260048980908
+    second: Neo Geo NGCD - Metal Slug - Player Status_43
+  - first:
+      213: 8721772609646899059
+    second: Neo Geo NGCD - Metal Slug - Player Status_44
+  - first:
+      213: -7476820203550040711
+    second: Neo Geo NGCD - Metal Slug - Player Status_45
+  - first:
+      213: -1932493347865264370
+    second: Neo Geo NGCD - Metal Slug - Player Status_46
+  - first:
+      213: 7317370026793568565
+    second: Neo Geo NGCD - Metal Slug - Player Status_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 114
+        width: 62
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd7812bca45aa750800000000000000
+      internalID: 6316954528039599549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 123
+        width: 31
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebc07fb4a49fe30f0800000000000000
+      internalID: -1135195958553408322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 111
+        width: 31
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b78b7c9d0e3f6820800000000000000
+      internalID: 2913615712112838576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b03c3fcb0c32afa0800000000000000
+      internalID: -5791000149425901390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_4
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1119e55bee01625f0800000000000000
+      internalID: -781918867871067887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_5
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26286320119f17730800000000000000
+      internalID: 3995248195901227618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_6
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11add793ccec45490800000000000000
+      internalID: -7758348881519322607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_7
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23b573713b149090800000000000000
+      internalID: -8028762336490310868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_8
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9667e33a31ed9ecd0800000000000000
+      internalID: -2528245539867298199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_9
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757cb33b74e6f25b0800000000000000
+      internalID: -5390968974710421673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_10
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 99
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a472b72bab13565f0800000000000000
+      internalID: -764149883841337526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_11
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 99
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9019e195fffb6b9c0800000000000000
+      internalID: -3911728122891955959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9932754af713940800000000000000
+      internalID: 5274136982440876450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 83
+        width: 21
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b667cb28477d9e30800000000000000
+      internalID: 4511893553550943929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_14
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 83
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2c48299c81b83e0800000000000000
+      internalID: -2050517951311461673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 83
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad04980ef174a970800000000000000
+      internalID: 8765256110649380259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca9071c7fd39cc770800000000000000
+      internalID: 8632437173831272876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_17
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 55
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc9eaa8e2cd3c6410800000000000000
+      internalID: 1471619085579774415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_18
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 55
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21387d1a7dae3970800000000000000
+      internalID: 8736611067137372458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_19
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 55
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78019d5e463fa4d20800000000000000
+      internalID: 3263688494661832839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_20
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 55
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660b555ce75c468f0800000000000000
+      internalID: -548096106365079450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_21
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 55
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27d77f49fc3cc500800000000000000
+      internalID: 417775906916390700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 43
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e827dfd01f0ed110800000000000000
+      internalID: 1287483108623853794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_23
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 44
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444595c05c205a6c0800000000000000
+      internalID: -4132894037703568316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 25
+        width: 28
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a54f2c6bde37af250800000000000000
+      internalID: 5979218920098427994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_25
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 31
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6753269d88f4a30800000000000000
+      internalID: 4201727444596913848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 31
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddcd81568c7f0c900800000000000000
+      internalID: 702833981931445469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 31
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe13d3655b402ed0800000000000000
+      internalID: -2440868167915725072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 31
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57665a86fd03e2b80800000000000000
+      internalID: -8417736917417367947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65ec08067ae3d2e0800000000000000
+      internalID: -2102078808389786262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_30
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 8
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0220b10ab7425580800000000000000
+      internalID: -8839924254357052918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_31
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 8
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d707078d459f5f0800000000000000
+      internalID: -722452976640164566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_32
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 8
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff526b43dae3dbc0800000000000000
+      internalID: -3759403070700494861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_33
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 8
+        width: 15
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1265604e6c63dc0800000000000000
+      internalID: -3659518964530798090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f3ef1d4db97b1a0800000000000000
+      internalID: -6793790174506631422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_35
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 215c58b5aedab9510800000000000000
+      internalID: 1557029318256084242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_36
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f81cb841cb417310800000000000000
+      internalID: 1400984252609992944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_37
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdc158dd42887c00800000000000000
+      internalID: 898611396513746354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_38
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd3d78a7ee6bedc0800000000000000
+      internalID: -3608668735164039729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_39
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62a405828abb1f120800000000000000
+      internalID: 2445942403544140326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_40
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7325407528af7a720800000000000000
+      internalID: 2857527926302462519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_41
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6739d492167c7b60800000000000000
+      internalID: 7745195281349162863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_42
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 0
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c4bffe24ccd8b80800000000000000
+      internalID: -8390825942855234471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_43
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabb925cc9faae060800000000000000
+      internalID: 6983587260048980908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_44
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 0
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f2cb18af5f90970800000000000000
+      internalID: 8721772609646899059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_45
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d9fe583affc3890800000000000000
+      internalID: -7476820203550040711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_46
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 0
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0f7fa5f9876e25e0800000000000000
+      internalID: -1932493347865264370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Neo Geo NGCD - Metal Slug - Player Status_47
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5390f1135458c8560800000000000000
+      internalID: 7317370026793568565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

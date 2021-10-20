@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerDownBullet : MonoBehaviour
 {
     //아래로 움직이는 총알
+    public GameManager gm;
     [SerializeField] private GameObject isAttacktedPrefab = null;
     [SerializeField] private GameObject isAttacktedMiniPrefab = null;
 
@@ -13,6 +14,7 @@ public class playerDownBullet : MonoBehaviour
     float speed = 15.0f;
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         Invoke("DestroyBullet", 0.3f);
     }
 
@@ -36,12 +38,16 @@ public class playerDownBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Enemy" && gm.chkBossStage)
         {
             Vector3 pos = this.transform.position;
             pos.y += 1.5f;
             pos.z = -2.0f;
             Instantiate(isAttacktedPrefab, pos, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.transform.tag == "Enemy" && !gm.chkBossStage)
+        {
             Destroy(gameObject);
         }
         if (collision.transform.tag == "M_Enemy")

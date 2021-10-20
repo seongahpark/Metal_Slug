@@ -5,12 +5,13 @@ using UnityEngine;
 public class playerUpBullet : MonoBehaviour
 {
     //위로 움직이는 총알
-
+    public GameManager gm;
     [SerializeField] private GameObject isAttacktedPrefab = null;
     [SerializeField] private GameObject isAttacktedMiniPrefab = null;
     float speed = 15.0f;
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         Invoke("DestroyBullet", 0.3f);
     }
 
@@ -33,9 +34,13 @@ public class playerUpBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Enemy" && gm.chkBossStage)
         {
             Instantiate(isAttacktedPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.transform.tag == "Enemy" && !gm.chkBossStage)
+        {
             Destroy(gameObject);
         }
         if (collision.transform.tag == "M_Enemy")
