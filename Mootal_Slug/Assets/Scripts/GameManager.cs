@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour
     public bool chkBossStage = false;
     public bool gameStart = false;
     public bool gameOver = false;
-    private bool gameOverScreen = false;
+    public bool gameClear = false;
+    public bool gameOverScreen = false;
     //player x 좌표가 20이상일때부터 BOSS 모드 ON
     private void Awake()
     {
@@ -21,18 +22,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameOver && !gameOverScreen)
+        if ((gameClear || gameOver) && !gameOverScreen)
         {
             gameOverScreen = true;
-            SceneManager.LoadScene(2);
+            StartCoroutine(waitForChange()); //3초 뒤 화면전환
         }
-        if (gameOver && Input.GetKeyDown(KeyCode.R))
+        if ((gameClear || gameOver) && Input.GetKeyDown(KeyCode.R))
         {
             ReStart();
         }
@@ -46,7 +46,15 @@ public class GameManager : MonoBehaviour
     private void ReStart()
     {
         SceneManager.LoadScene(0);
+        gameClear = false;
         gameOver = false;
         gameOverScreen = false;
+        chkBossStage = false;
+}
+
+    IEnumerator waitForChange()
+    {
+        yield return new WaitForSeconds(3.0f);
+        SceneManager.LoadScene(2);
     }
 }

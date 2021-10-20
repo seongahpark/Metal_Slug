@@ -21,7 +21,7 @@ public class enemyRight : MonoBehaviour
     {
         if (gm.chkBossStage)
         {
-            if (!ec.isclear)
+            if (!gm.gameClear)
             {
                 if (ec.isShoot_down)
                 {
@@ -33,7 +33,7 @@ public class enemyRight : MonoBehaviour
                     StartCoroutine(ec.Blink(rend));
                 }
             }
-            if (ec.isclear)
+            if (gm.gameClear)
             {
                 this.gameObject.SetActive(false);
             }
