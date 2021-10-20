@@ -13,6 +13,6 @@ public class MissileFlashEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, 0.5f);
+        Destroy(gameObject, 0.4f);
     }
 }

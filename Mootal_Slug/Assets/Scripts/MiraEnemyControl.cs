@@ -31,7 +31,7 @@ public class MiraEnemyControl : MonoBehaviour
         if (miniEnemyHp <= 0)
         {
             animator.SetBool("isDestroyed", true);
-            Destroy(this.gameObject, 1.3f);
+            Destroy(this.gameObject, 1.0f);
         }
 
     }

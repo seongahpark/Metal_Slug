@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    public GameManager gm;
 
     public static int life=2;
 
@@ -203,8 +204,8 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bossborder")
         {
-           
             bosscheck = true;
+            gm.chkBossStage = true; // GM에서 Boss Stage Chk하는 변수 추가
         }
         if (collision.gameObject.tag == "border")
         {
