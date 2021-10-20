@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class enemyControl : MonoBehaviour
 {
+    public GameManager gm;
+
     [SerializeField] private GameObject bulletPrefab1 = null;
     [SerializeField] private GameObject bulletPrefab2 = null;
     [SerializeField] private GameObject people = null;
-    [SerializeField] private GameObject isAttacktedPrefab = null;
     [SerializeField] private GameObject explosionPrefab = null;
     [SerializeField] private GameObject explosionBigPrefab = null;
  
@@ -33,6 +34,7 @@ public class enemyControl : MonoBehaviour
     private bool isStop = true; // 정지상태
     private float moveTime = 2.0f;
 
+    private bool deadMotion = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,41 +44,47 @@ public class enemyControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveTime -= Time.deltaTime;
-        if(moveTime <= 0)
+        if (gm.chkBossStage)
         {
-            moveTime = Random.Range(2.0f, 5.0f);
-            isStop = !isStop;
-        }
-            
-        MoveState();
-        if(!isStop) EnemyMove(go_left);
+            MoveTime(); // 보스 움직임 / 멈춤 제어
+            MoveState(); // 왼쪽, 오른쪽 방향 전환
+            if (!isStop) EnemyMove(go_left);
 
-        attackTime += Time.deltaTime;
-        if (attackTime > max_attackTime)
-        {
-            attackTime -= max_attackTime;
-            int rand = Random.Range(0, 2);
-            if (rand == 1) Attack_up();
-            if (rand == 0) Attack_down();
-        }
+            Attack(); // 보스 공격
 
-        peopleTime -= Time.deltaTime;
-        if(peopleTime < 0)
-        {
-            people.SetActive(true);
-            StartCoroutine(Disabled(people, 1.6f));
-            peopleTime += 5.0f;
-        }
+            peopleTime -= Time.deltaTime;
+            if (peopleTime < 0)
+            {
+                people.SetActive(true);
+                StartCoroutine(Disabled(people, 1.6f));
+                peopleTime += 5.0f;
+            }
 
+            if (enemyHP <= 0)
+            {
+                isclear = true;
+                if (!deadMotion) enemyDeadMotion();
+                Destroy(gameObject, 2.0f);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "P_Bullet")
+        if(collision.transform.tag == "P_Bullet" && enemyHP > 0)
         {
             e_isAttack = true;
             enemyIsAttackted();
+        }
+    }
+
+    private void MoveTime()
+    {
+        moveTime -= Time.deltaTime;
+        if (moveTime <= 0)
+        {
+            moveTime = Random.Range(2.0f, 5.0f);
+            isStop = !isStop;
         }
     }
 
@@ -101,6 +109,18 @@ public class enemyControl : MonoBehaviour
         if (!go_left)
         {
             this.transform.position += Vector3.right * Time.deltaTime;
+        }
+    }
+
+    private void Attack()
+    {
+        attackTime += Time.deltaTime;
+        if (attackTime > max_attackTime)
+        {
+            attackTime -= max_attackTime;
+            int rand = Random.Range(0, 2);
+            if (rand == 1) Attack_up();
+            if (rand == 0) Attack_down();
         }
     }
     private void Attack_up()
@@ -145,18 +165,7 @@ public class enemyControl : MonoBehaviour
     public void enemyIsAttackted()
     {
         enemyHP--;
-
-        Vector3 pos = this.transform.position;
-        pos.x -= 1.8f;
-        pos.y += 1.5f;
-        pos.z = -2.0f;
-        Instantiate(isAttacktedPrefab, pos, Quaternion.identity);
         if (enemyHP <= enemyHP_10per) isfired = true;
-        if (enemyHP <= 0)
-        {
-            isclear = true;
-            enemyDeadMotion();
-        }
     }
 
     private void enemyDeadMotion()
@@ -169,6 +178,8 @@ public class enemyControl : MonoBehaviour
         pos.y += 1.0f;
         pos.z = -2;
         Instantiate(explosionBigPrefab, pos, Quaternion.identity);
+        
+        deadMotion = true;
     }
 
     IEnumerator enemyExplosion()
