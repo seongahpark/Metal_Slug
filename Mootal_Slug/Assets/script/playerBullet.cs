@@ -28,15 +28,7 @@ public class playerBullet : MonoBehaviour
     }
     void bulletmove()
     {
-        if (transform.rotation.y == 0)
-        {
-            transform.Translate(transform.right * speed * Time.deltaTime);
-        }
-        else
-        {
-            transform.Translate(transform.right * -1 * speed * Time.deltaTime);
-        }
-
+        transform.position = transform.position + (transform.right * speed * Time.deltaTime);
     }
     void bulletupmove()
     {
