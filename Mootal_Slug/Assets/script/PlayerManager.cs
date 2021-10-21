@@ -16,7 +16,8 @@ public class PlayerManager : MonoBehaviour
     bool isTouchRight; //오른쪽 끝에 도달했는지
     bool isTouchLeft; // 왼쪽 끝에 도달했는지
     bool bosscheck;   //보스 리스폰 지점 도달
-    bool ishittable;  
+    bool ishittable;  //맞을수있는 상태인지
+    bool Diecheck; //죽은 상태인지
 
 
     public GameObject Stand; // 서있는 상태
@@ -24,6 +25,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject CM_camar;
     public GameObject bossborder;
     public GameObject Player_Die;
+    public GameObject Player_body;
+    public GameObject Player_item_body;
+    public GameObject Player_item_Down;
 
     public LayerMask islayer;
 
@@ -35,7 +39,7 @@ public class PlayerManager : MonoBehaviour
     public bool PDown = false; //아랫 방향키 눌렷는지 
     public static bool isGround = false; //바닥에 닿았는지
     public static bool rayisGround ;
-    
+    public static bool itemcheck;
 
     private Rigidbody2D rb;
     
@@ -52,21 +56,27 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         lifeText.text = "1UP = " + life.ToString(); // 생명 표시
-        ishittable = false;
+        itemcheck = false;
+        Player_item_body.SetActive(false);
+        Diecheck = false;
+        ishittable = true;
         Player_Down.SetActive(false);
         Player_Die.SetActive(false);
+        Player_item_Down.SetActive(false);
     }
 
     
     void Update()
     {
         rayisGround = Physics2D.OverlapCircle(raypos.position, checkRadius, islayer);
-        
 
-        playermove();
-        playerjump();
-        playerdown();
-        //playerhit();
+        if (Diecheck == false)
+        {
+            playermove();
+            playerjump();
+            playerdown();
+        }
+
         bossrespawn();
     }
     private void playermove()
@@ -82,17 +92,10 @@ public class PlayerManager : MonoBehaviour
         if (h < 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
-           
-            
-
         }
         if (h > 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
-           
-
-
-
         }
 
         transform.position = curpos + nextpos;
@@ -100,6 +103,7 @@ public class PlayerManager : MonoBehaviour
         {
             playerLeg.anim.SetInteger("Input", (int)h);
             DownPlayer.anim.SetInteger("Input", (int)h);
+            player_item_Down.anim.SetInteger("Input", (int)h);
         }
     }
 
@@ -122,6 +126,7 @@ public class PlayerManager : MonoBehaviour
         {
             //숙인상태에서 점프
             Player_Down.SetActive(false);
+            Player_item_Down.SetActive(false);
             Stand.SetActive(true);
             jumpCount++;
 
@@ -130,39 +135,40 @@ public class PlayerManager : MonoBehaviour
 
             playerLeg.anim.SetInteger("jumpcount", jumpCount);
             playerbody.anim.SetInteger("jumpcount", jumpCount);
-
         }
     }
-    
-    void playerdown() 
-    {
-        
-            if (Input.GetKey(KeyCode.DownArrow))
-            {
-                PDown = true;
 
-                if (jumpCount == 0&&isGround==true&&rayisGround==true) //숙일시
-                {
-                
+    void playerdown()
+    {
+
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            PDown = true;
+
+            if (jumpCount == 0 && isGround == true && rayisGround == true) //숙일시
+            {
                 Stand.SetActive(false);
-                Player_Down.SetActive(true);
-                
-                }
-                else   //점프중 아래로
-                {
+                if (itemcheck == false)
+                    Player_Down.SetActive(true);
+                else if (itemcheck == true)
+                    Player_item_Down.SetActive(true);
+            }
+            else   //점프중 아래로
+            {
                 playerLeg.anim.SetInteger("jumpcount", jumpCount);
                 playerbody.anim.SetBool("Down", PDown);
-                }
-
+                player_item_body.anim.SetBool("Down", PDown);
             }
-        
-        
-            if (Input.GetKeyUp(KeyCode.DownArrow))
-            {
-                PDown = false;
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            PDown = false;
             Stand.SetActive(true);
             Player_Down.SetActive(false);
+            Player_item_Down.SetActive(false);
             playerbody.anim.SetBool("Down", PDown);
+            player_item_body.anim.SetBool("Down", PDown);
         }
     }
     void bossrespawn()
@@ -171,32 +177,54 @@ public class PlayerManager : MonoBehaviour
         {
             CM_camar.SetActive(false);
             bossborder.SetActive(true);
-
         }
     }
     void playerhit()
     {
         if (ishittable == true)
         {
+            Diecheck = true;
+            Invoke("Respawnplayer", 2.5f);
             ishittable = false;
             life--;
             Stand.SetActive(false);
             Player_Down.SetActive(false);
             Player_Die.SetActive(true);
+            //StartCoroutine("blink");
         }
     }
-
+    void hittabletrue()
+    {
+        ishittable = true;
+    }
+    public void Respawnplayer()
+    {
+        Diecheck = false;
+        Player_Die.SetActive(false);
+        Stand.SetActive(true);
+        this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
+        Invoke("hittabletrue", 1.5f);
+    }
+    void pickup_item()
+    {
+        itemcheck = true;
+        Player_body.SetActive(false);
+        Player_item_body.SetActive(true);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        
-            if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             Debug.Log("aaa");
             jumpCount = 0;
             isGround = true;
             playerLeg.anim.SetInteger("jumpcount", jumpCount);
             playerbody.anim.SetInteger("jumpcount", jumpCount);
+        }
+        if (collision.gameObject.tag == "M_Enemy")
+        {
+            Debug.Log("DDD");
+            playerhit();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -220,6 +248,11 @@ public class PlayerManager : MonoBehaviour
 
             }
         }
+        if (collision.gameObject.tag == "item")
+        {
+            pickup_item();
+            Destroy(collision.gameObject);
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -242,7 +275,6 @@ public class PlayerManager : MonoBehaviour
                 case "Right":
                     isTouchRight = false;
                     break;
-
             }
         }
     }
