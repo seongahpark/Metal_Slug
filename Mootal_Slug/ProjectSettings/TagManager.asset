@@ -15,6 +15,7 @@ TagManager:
   - item
   - P_Bomb
   - bullet_border
+  - item_Bomb
   layers:
   - Default
   - TransparentFX

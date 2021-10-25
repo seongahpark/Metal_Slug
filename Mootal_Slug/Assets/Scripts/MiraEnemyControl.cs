@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MiraEnemyControl : MonoBehaviour
 {
+    [SerializeField] private GameObject itemPrefab = null;
     [SerializeField] public enemyControl ec;
     private Collider2D collison;
     private Animator animator;
@@ -13,6 +14,7 @@ public class MiraEnemyControl : MonoBehaviour
     [SerializeField] private int state = 0;
     [SerializeField] private float stateTime = 1.5f;
 
+    private bool dropChk = false;
     //state 0 : 정지, 1 : 걷기, 2 : 하울링, 3 : destroyed
 
     // Start is called before the first frame update
@@ -33,6 +35,7 @@ public class MiraEnemyControl : MonoBehaviour
 
         if (miniEnemyHp <= 0)
         {
+            if (!dropChk) DropItem(); // 일정 확률로 아이템 드롭
             collison.isTrigger = true;
             animator.SetBool("isDestroyed", true);
             Destroy(this.gameObject, 1.0f);
@@ -104,5 +107,16 @@ public class MiraEnemyControl : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Moving();
+    }
+
+    private void DropItem()
+    {
+        dropChk = true;
+        int rand = Random.Range(0, 100);
+        Debug.Log("rand " + rand);
+        if (rand <= 40)
+        {
+            Instantiate(itemPrefab, transform.position, Quaternion.identity);
+        }
     }
 }
