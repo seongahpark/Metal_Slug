@@ -14,11 +14,13 @@ public class playershoot : MonoBehaviour
     public Transform pos3;
     public Transform bomppos;
 
+    public static int bombcount; //ÆøÅº°¹¼ö
+
     public static bool shootcheck = false;
 
     void Start()
     {
-
+        bombcount = 10;
     }
     void Update()
     {
@@ -93,11 +95,15 @@ public class playershoot : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            playerbody.anim.SetBool("bomb", true);
-            player_item_body.anim.SetBool("bomb", true);
+            if (bombcount > 0)
+            {
+                playerbody.anim.SetBool("bomb", true);
+                player_item_body.anim.SetBool("bomb", true);
+            }
         }
         if (Input.GetKeyUp(KeyCode.Z))
         {
+
             playerbody.anim.SetBool("bomb", false);
             player_item_body.anim.SetBool("bomb", false);
         }

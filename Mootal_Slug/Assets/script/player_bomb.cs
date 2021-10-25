@@ -8,7 +8,7 @@ public class player_bomb : MonoBehaviour
 
     public float bombSpeed;
 
-    int count = 3;
+    int count = 3; //Æ¨±â´Â È½¼ö
 
 
     void Start()
