@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DownShoot : MonoBehaviour
 {
     //숙인 상태에서 발사
 
 
-
+    public PlayerManager pm;
     public GameObject bullet;
     public GameObject bomb;
 
     public Transform pos;
     public Transform bomppos;
+
+    [SerializeField] private Text armsText;
     void Start()
     {
         
@@ -57,12 +60,18 @@ public class DownShoot : MonoBehaviour
         else 
         {
             Instantiate(bullet, pos.position, transform.rotation);
-            PlayerManager.Shot_Count--;
+            pm.shootCount--;
+            armsText.text = pm.shootCount.ToString();
+            if (pm.shootCount <= 0) itemChk();
         }
         
     }
     void bombshot()
     {
         Instantiate(bomb, bomppos.position, bomppos.rotation);
+    }
+    public void itemChk()
+    {
+        pm.pickoff_item();
     }
 }

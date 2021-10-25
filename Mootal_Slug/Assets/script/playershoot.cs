@@ -24,7 +24,7 @@ public class playershoot : MonoBehaviour
     void Start()
     {
         bombcount = 10;
-        pm.shootCount = 1000;
+        //pm.shootCount = 1000;
     }
     void Update()
     {
@@ -39,7 +39,9 @@ public class playershoot : MonoBehaviour
         else 
         {
             Instantiate(bullet, pos.position, transform.rotation);
-            PlayerManager.Shot_Count--;
+            pm.shootCount--;
+            armsText.text = pm.shootCount.ToString();
+            if (pm.shootCount <= 0) itemChk();
         }
        
     }
@@ -50,7 +52,9 @@ public class playershoot : MonoBehaviour
         else 
         {
             Instantiate(bullet2, pos2.position, transform.rotation);
-            PlayerManager.Shot_Count--;
+            pm.shootCount--;
+            armsText.text = pm.shootCount.ToString();
+            if (pm.shootCount <= 0) itemChk();
         }
         Instantiate(bullet2, pos2.position, transform.rotation);
     }
@@ -61,7 +65,9 @@ public class playershoot : MonoBehaviour
         else 
         {
             Instantiate(bullet3, pos3.position, transform.rotation);
-            PlayerManager.Shot_Count--;
+            pm.shootCount--;
+            armsText.text = pm.shootCount.ToString();
+            if (pm.shootCount <= 0) itemChk();
         }
         Instantiate(bullet3, pos3.position, transform.rotation);
     }
@@ -77,6 +83,9 @@ public class playershoot : MonoBehaviour
             //Instantiate(bullet, pos4.position,pos4.rotation=Quaternion.Euler(0f,0f,angle));
             angle += angleDelta;
             count--;
+            pm.shootCount--;
+            armsText.text = pm.shootCount.ToString();
+            if (pm.shootCount <= 0) itemChk();
             yield return new WaitForSeconds(0.05f);
             //yield return null;
 
@@ -94,6 +103,9 @@ public class playershoot : MonoBehaviour
             //Instantiate(bullet, pos4.position,pos4.rotation=Quaternion.Euler(0f,0f,angle));
             angle -= angleDelta;
             count--;
+            pm.shootCount--;
+            armsText.text = pm.shootCount.ToString();
+            if (pm.shootCount <= 0) itemChk();
             yield return new WaitForSeconds(0.05f);
             //yield return null;
         }
@@ -108,9 +120,9 @@ public class playershoot : MonoBehaviour
             else if (PlayerManager.itemcheck == true)
             {
                 player_item_body.anim.SetBool("Shoot", true);
-                pm.shootCount--;
-                armsText.text = pm.shootCount.ToString();
-                if (pm.shootCount <= 0) itemChk();
+                //pm.shootCount--;
+                //armsText.text = pm.shootCount.ToString();
+                //if (pm.shootCount <= 0) itemChk();
             }
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))

@@ -36,14 +36,14 @@ public class PlayerManager : MonoBehaviour
     public Transform raypos;
     
 
+    public int shootCount = 0; //아이템 총알 개수
     public static int jumpCount = 0;
-    public static int Shot_Count; //연사 횟수
+    //public static int Shot_Count; //연사 횟수
 
     public bool PDown = false; //아랫 방향키 눌렷는지 
     public static bool isGround = false; //바닥에 닿았는지
     public static bool rayisGround;
     public static bool itemcheck = false;
-    public int shootCount = 1000; //아이템 총알 개수
 
     private Rigidbody2D rb;
 
@@ -56,7 +56,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         life = 3;
-        Shot_Count = 0;
+        shootCount = 0;
         lifeText.text = "1UP = " + life.ToString(); // 생명 표시
         armsText.text = "<size=27>"+"∞"+"</size>";
 
@@ -80,7 +80,7 @@ public class PlayerManager : MonoBehaviour
             playerjump();
             playerdown();
         }
-        //Item_Check();
+        Item_Check();
         bossrespawn();
     }
     private void playermove()
@@ -192,7 +192,7 @@ public class PlayerManager : MonoBehaviour
             life--;
             lifeText.text = "1UP = " + life.ToString(); // 생명 표시
             itemcheck = false;
-            Shot_Count = 0;
+            shootCount = 0;
             Stand.SetActive(false);
             Player_Down.SetActive(false);
             Player_Die.SetActive(true);
@@ -212,6 +212,7 @@ public class PlayerManager : MonoBehaviour
     public void Respawnplayer()
     {
         Diecheck = false;
+        
         Player_Die.SetActive(false);
         Stand.SetActive(true);
         this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
@@ -222,31 +223,31 @@ public class PlayerManager : MonoBehaviour
     {
         shootCount = 1000;
         itemcheck = true;
-/*
-        Shot_Count += 150;
+
+        //Shot_Count += 150;
         //Player_body.SetActive(false);
         //Player_item_body.SetActive(true);
     }
     void Item_Check()
     {
-        if (Shot_Count <= 0)
+        if (shootCount <= 0)
             itemcheck = false;
 
         if (itemcheck == false)
         {
-            
+
             Player_body.SetActive(true);
             Player_item_body.SetActive(false);
         }
-        else if (itemcheck==true)
+        else if (itemcheck == true)
         {
             Player_body.SetActive(false);
             Player_item_body.SetActive(true);
         }
 
-*/
-        Player_body.SetActive(false);
-        Player_item_body.SetActive(true);
+
+        //Player_body.SetActive(false);
+        //Player_item_body.SetActive(true);
         armsText.text = shootCount.ToString();
     }
 
