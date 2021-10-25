@@ -453,10 +453,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa5f2cea8f2b5840ae7f3249ce3f5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 2096095720}
   bullet: {fileID: 6325288725417166379, guid: 94791ea10f64a2b46955f4c85416ca32, type: 3}
   bomb: {fileID: 8199665200235737204, guid: 83d26cc1eb825f34e836fe2304bb00fb, type: 3}
   pos: {fileID: 637224720}
   bomppos: {fileID: 330423328}
+  armsText: {fileID: 2077788117}
 --- !u!1 &136592704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,7 +1516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0.74, z: -10}
+  m_LocalPosition: {x: -21.878096, y: 0.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1227599133}
@@ -4272,10 +4274,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa5f2cea8f2b5840ae7f3249ce3f5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 2096095720}
   bullet: {fileID: 6325288725417166379, guid: d416386998af3844aaecfc6cd4d2c67d, type: 3}
   bomb: {fileID: 8199665200235737204, guid: 83d26cc1eb825f34e836fe2304bb00fb, type: 3}
   pos: {fileID: 1511510545}
   bomppos: {fileID: 1493312994}
+  armsText: {fileID: 2077788117}
 --- !u!1 &1905712346
 GameObject:
   m_ObjectHideFlags: 0
@@ -5161,8 +5165,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   raypos: {fileID: 510470998}
-  PDown: 0
   shootCount: 1000
+  PDown: 0
 --- !u!1001 &2144009103
 PrefabInstance:
   m_ObjectHideFlags: 0
