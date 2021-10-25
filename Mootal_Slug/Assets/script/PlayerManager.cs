@@ -215,7 +215,6 @@ public class PlayerManager : MonoBehaviour
         Player_Die.SetActive(false);
         Stand.SetActive(true);
         this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
-        playershoot.bombcount = 10;
         Invoke("hittabletrue", 1.5f);
     }
     public void pickup_item()
@@ -300,6 +299,11 @@ public class PlayerManager : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
+        if (collision.gameObject.tag == "item_Bomb")
+        {
+            playershoot.bombcount = 10;
+            Destroy(collision.gameObject);
+        }
         if (collision.gameObject.tag == "Bullet")
         {
             Debug.Log("DDD");
