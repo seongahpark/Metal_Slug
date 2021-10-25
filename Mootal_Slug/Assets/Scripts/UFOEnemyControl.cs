@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UFOEnemyControl : MonoBehaviour
 {
+    [SerializeField] private GameObject itemPrefab = null;
     [SerializeField] private GameObject bulletPrefab = null;
     [SerializeField] public enemyControl ec;
     private Animator animator;
@@ -15,7 +16,9 @@ public class UFOEnemyControl : MonoBehaviour
     private float attackTime = attackMaxTime;
     [SerializeField] private static float posMaxTime = 1.5f;
     [SerializeField] private float posTime = posMaxTime / 2.0f;
+
     private int pos = 1;
+    private bool dropChk = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,7 @@ public class UFOEnemyControl : MonoBehaviour
 
         if (miniEnemyHp <= 0)
         {
+            if(!dropChk) DropItem(); // 일정 확률로 아이템 드롭
             collision.isTrigger = true;
             animator.SetBool("isDestroyed", true);
             Destroy(this.gameObject, 2.0f);
@@ -75,5 +79,16 @@ public class UFOEnemyControl : MonoBehaviour
         pos.y -= 0.3f;
         pos.z = -1.0f;
         Instantiate(bulletPrefab, pos, Quaternion.identity);
+    }
+
+    private void DropItem()
+    {
+        dropChk = true;
+        int rand = Random.Range(0, 100);
+        Debug.Log("rand " + rand);
+        if(rand <= 40)
+        {
+            Instantiate(itemPrefab, transform.position, Quaternion.identity);
+        }
     }
 }

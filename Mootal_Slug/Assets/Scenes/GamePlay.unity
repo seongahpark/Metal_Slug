@@ -1619,6 +1619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6077c0bae37564daea5ba7396e36cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 2096095720}
+  armsText: {fileID: 2077788117}
   bullet: {fileID: 6325288725417166379, guid: 94791ea10f64a2b46955f4c85416ca32, type: 3}
   bullet2: {fileID: 6325288725417166379, guid: 63823238a3da0d249a7ef1e58f8e0325, type: 3}
   bullet3: {fileID: 6325288725417166379, guid: 9345d3d33020a8546afba39a10d3e8c9, type: 3}
@@ -3858,6 +3860,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6077c0bae37564daea5ba7396e36cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 0}
+  armsText: {fileID: 2077788117}
   bullet: {fileID: 6325288725417166379, guid: d416386998af3844aaecfc6cd4d2c67d, type: 3}
   bullet2: {fileID: 6325288725417166379, guid: cec757e031bcf424b9a970ab10475d4f, type: 3}
   bullet3: {fileID: 6325288725417166379, guid: 7701d5a5c4accd64daeecdcae215a3e5, type: 3}
@@ -4872,8 +4876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12, y: -3.9}
-  m_SizeDelta: {x: 73.2097, y: 30}
+  m_AnchoredPosition: {x: -13.021, y: -4}
+  m_SizeDelta: {x: 78.125, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2077788117
 MonoBehaviour:
@@ -4897,18 +4901,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
-    m_FontStyle: 0
+    m_FontSize: 17
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 300
-    m_Alignment: 1
-    m_AlignByGeometry: 1
+    m_MaxSize: 51
+    m_Alignment: 4
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 00000
+    m_Text: "\u221E"
 --- !u!222 &2077788118
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5082,8 +5086,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2096095719}
-  - component: {fileID: 2096095718}
   - component: {fileID: 2096095720}
+  - component: {fileID: 2096095718}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5144,6 +5148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 1969376796}
   lifeText: {fileID: 1213997154}
+  armsText: {fileID: 2077788117}
   Stand: {fileID: 1960353371}
   Player_Down: {fileID: 1878938289}
   CM_camar: {fileID: 1506248491}
@@ -5157,6 +5162,7 @@ MonoBehaviour:
     m_Bits: 256
   raypos: {fileID: 510470998}
   PDown: 0
+  shootCount: 1000
 --- !u!1001 &2144009103
 PrefabInstance:
   m_ObjectHideFlags: 0
