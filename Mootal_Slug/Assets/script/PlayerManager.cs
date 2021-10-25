@@ -80,7 +80,7 @@ public class PlayerManager : MonoBehaviour
             playerjump();
             playerdown();
         }
-        Item_Check();
+        //Item_Check();
         bossrespawn();
     }
     private void playermove()
