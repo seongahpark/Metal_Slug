@@ -33,23 +33,33 @@ public class DownShoot : MonoBehaviour
             DownPlayer.anim.SetBool("Shoot", false);
             player_item_Down.anim.SetBool("Shoot", false);
         }
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
 
-
-            player_item_Down.anim.SetBool("bomb", true);
-            DownPlayer.anim.SetBool("bomb", true);
+            if (playershoot.bombcount > 0)
+            {
+                player_item_Down.anim.SetTrigger("Bomb");
+                DownPlayer.anim.SetTrigger("Bomb");
+                playershoot.bombcount--;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            player_item_Down.anim.SetBool("bomb", false);
-            DownPlayer.anim.SetBool("bomb", false);
-        }
+        //if (Input.GetKeyUp(KeyCode.Z))
+        //{
+        //    player_item_Down.anim.SetBool("bomb", false);
+        //    DownPlayer.anim.SetBool("bomb", false);
+        //}
 
     }
     public void shoot()
     {
-        Instantiate(bullet, pos.position, transform.rotation);
+        if (PlayerManager.itemcheck == false)
+            Instantiate(bullet, pos.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet, pos.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
+        
     }
     void bombshot()
     {

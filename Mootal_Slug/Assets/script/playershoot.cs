@@ -18,7 +18,7 @@ public class playershoot : MonoBehaviour
     public Transform pos3;
     public Transform bomppos;
 
-    public static int bombcount; //ÆøÅº°¹¼ö
+    public static int bombcount; //í­íƒ„ê°¯ìˆ˜
     public static bool shootcheck = false;
 
     void Start()
@@ -28,19 +28,41 @@ public class playershoot : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKey(KeyCode.Q)) Debug.Log("saf");
         shootbutton();
         playerbomb();
     }
-    public void shoot()  //Æò»ó½Ã
+    public void shoot()  //í‰ìƒì‹œ
     {
+        if (PlayerManager.itemcheck==false)
         Instantiate(bullet, pos.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet, pos.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
+       
     }
-    public void upshoot() //À§¸¦ º¸¸é¼­
+    public void upshoot() //ìœ„ë¥¼ ë³´ë©´ì„œ
     {
+        if (PlayerManager.itemcheck == false)
+            Instantiate(bullet2, pos2.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet2, pos2.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
         Instantiate(bullet2, pos2.position, transform.rotation);
     }
-    public void jumpdownshoot() //Á¡ÇÁÁß ¾Æ·¡¸¦ º¸¸é¼­
+    public void jumpdownshoot() //ì í”„ì¤‘ ì•„ëž˜ë¥¼ ë³´ë©´ì„œ
     {
+        if (PlayerManager.itemcheck == false)
+            Instantiate(bullet3, pos3.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet3, pos3.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
         Instantiate(bullet3, pos3.position, transform.rotation);
     }
     private IEnumerator shoo_up1()
@@ -102,26 +124,28 @@ public class playershoot : MonoBehaviour
     }
     void playerbomb()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+       
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("DDD");
             if (bombcount > 0)
             {
-                playerbody.anim.SetBool("bomb", true);
-                player_item_body.anim.SetBool("bomb", true);
+                playerbody.anim.SetTrigger("Bomb");
+                player_item_body.anim.SetTrigger("Bomb");
+                bombcount--;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
+        //if (Input.GetKeyUp(KeyCode.Z))
+        //{
 
-            playerbody.anim.SetBool("bomb", false);
-            player_item_body.anim.SetBool("bomb", false);
-        }
+        //    playerbody.anim.SetBool("bomb", false);
+        //    player_item_body.anim.SetBool("bomb", false);
+        //}
     }
     void bombshot()
     {
         Instantiate(bomb, bomppos.position, bomppos.rotation);
     }
-
     public void itemChk()
     {
         pm.pickoff_item();

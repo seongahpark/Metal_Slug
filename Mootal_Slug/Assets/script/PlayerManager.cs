@@ -9,21 +9,21 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private Text lifeText;
     [SerializeField] private Text armsText;
-    public static int life=3; //ÇÃ·¹ÀÌ¾î »ı¸í 3À¸·Î °íÁ¤
+    public static int life=3; //í”Œë ˆì´ì–´ ìƒëª… 3ìœ¼ë¡œ ê³ ì •
 
     float speed = 3;
-    float jumpForce = 500f;
-    float checkRadius = 0.35f; //·¹ÀÌ °Ë»ç ¹üÀ§
+    float jumpForce = 300f;
+    float checkRadius = 0.35f; //ë ˆì´ ê²€ì‚¬ ë²”ìœ„
 
-    bool isTouchRight; //¿À¸¥ÂÊ ³¡¿¡ µµ´ŞÇß´ÂÁö
-    bool isTouchLeft; // ¿ŞÂÊ ³¡¿¡ µµ´ŞÇß´ÂÁö
-    bool bosscheck;   //º¸½º ¸®½ºÆù ÁöÁ¡ µµ´Ş
-    bool ishittable;  //¸ÂÀ»¼öÀÖ´Â »óÅÂÀÎÁö
-    bool Diecheck; //Á×Àº »óÅÂÀÎÁö
+    bool isTouchRight; //ì˜¤ë¥¸ìª½ ëì— ë„ë‹¬í–ˆëŠ”ì§€
+    bool isTouchLeft; // ì™¼ìª½ ëì— ë„ë‹¬í–ˆëŠ”ì§€
+    bool bosscheck;   //ë³´ìŠ¤ ë¦¬ìŠ¤í° ì§€ì  ë„ë‹¬
+    bool ishittable;  //ë§ì„ìˆ˜ìˆëŠ” ìƒíƒœì¸ì§€
+    bool Diecheck; //ì£½ì€ ìƒíƒœì¸ì§€
 
 
-    public GameObject Stand; // ¼­ÀÖ´Â »óÅÂ
-    public GameObject Player_Down; //¼÷ÀÎ»óÅÂ 
+    public GameObject Stand; // ì„œìˆëŠ” ìƒíƒœ
+    public GameObject Player_Down; //ìˆ™ì¸ìƒíƒœ 
     public GameObject CM_camar;
     public GameObject bossborder;
     public GameObject Player_Die;
@@ -37,12 +37,13 @@ public class PlayerManager : MonoBehaviour
     
 
     public static int jumpCount = 0;
+    public static int Shot_Count; //ì—°ì‚¬ íšŸìˆ˜
 
-    public bool PDown = false; //¾Æ·§ ¹æÇâÅ° ´­·Ç´ÂÁö 
-    public static bool isGround = false; //¹Ù´Ú¿¡ ´ê¾Ò´ÂÁö
+    public bool PDown = false; //ì•„ë« ë°©í–¥í‚¤ ëˆŒë ·ëŠ”ì§€ 
+    public static bool isGround = false; //ë°”ë‹¥ì— ë‹¿ì•˜ëŠ”ì§€
     public static bool rayisGround;
     public static bool itemcheck = false;
-    public int shootCount = 1000; //¾ÆÀÌÅÛ ÃÑ¾Ë °³¼ö
+    public int shootCount = 1000; //ì•„ì´í…œ ì´ì•Œ ê°œìˆ˜
 
     private Rigidbody2D rb;
 
@@ -55,8 +56,9 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         life = 3;
-        lifeText.text = "1UP = " + life.ToString(); // »ı¸í Ç¥½Ã
-        armsText.text = "<size=27>"+"¡Ä"+"</size>";
+        Shot_Count = 0;
+        lifeText.text = "1UP = " + life.ToString(); // ìƒëª… í‘œì‹œ
+        armsText.text = "<size=27>"+"âˆ"+"</size>";
 
         itemcheck = false;
         Player_item_body.SetActive(false);
@@ -78,7 +80,7 @@ public class PlayerManager : MonoBehaviour
             playerjump();
             playerdown();
         }
-
+        Item_Check();
         bossrespawn();
     }
     private void playermove()
@@ -126,7 +128,7 @@ public class PlayerManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.LeftAlt) && jumpCount == 0 && PDown == true && isGround == true && rayisGround == true)
         {
-            //¼÷ÀÎ»óÅÂ¿¡¼­ Á¡ÇÁ
+            //ìˆ™ì¸ìƒíƒœì—ì„œ ì í”„
             Player_Down.SetActive(false);
             Player_item_Down.SetActive(false);
             Stand.SetActive(true);
@@ -147,7 +149,7 @@ public class PlayerManager : MonoBehaviour
         {
             PDown = true;
 
-            if (jumpCount == 0 && isGround == true && rayisGround == true) //¼÷ÀÏ½Ã
+            if (jumpCount == 0 && isGround == true && rayisGround == true) //ìˆ™ì¼ì‹œ
             {
                 Stand.SetActive(false);
                 if (itemcheck == false)
@@ -155,7 +157,7 @@ public class PlayerManager : MonoBehaviour
                 else if (itemcheck == true)
                     Player_item_Down.SetActive(true);
             }
-            else   //Á¡ÇÁÁß ¾Æ·¡·Î
+            else   //ì í”„ì¤‘ ì•„ë˜ë¡œ
             {
                 playerLeg.anim.SetInteger("jumpcount", jumpCount);
                 playerbody.anim.SetBool("Down", PDown);
@@ -188,10 +190,13 @@ public class PlayerManager : MonoBehaviour
             if(!gm.gameOver) Invoke("Respawnplayer", 2.5f);
             ishittable = false;
             life--;
-            lifeText.text = "1UP = " + life.ToString(); // »ı¸í Ç¥½Ã
+            lifeText.text = "1UP = " + life.ToString(); // ìƒëª… í‘œì‹œ
+            itemcheck = false;
+            Shot_Count = 0;
             Stand.SetActive(false);
             Player_Down.SetActive(false);
             Player_Die.SetActive(true);
+            Diecheck = true;
             //StartCoroutine("blink");
             if(life  <= 0)
             {
@@ -210,12 +215,36 @@ public class PlayerManager : MonoBehaviour
         Player_Die.SetActive(false);
         Stand.SetActive(true);
         this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
+        playershoot.bombcount = 10;
         Invoke("hittabletrue", 1.5f);
     }
     public void pickup_item()
     {
         shootCount = 1000;
         itemcheck = true;
+/*
+        Shot_Count += 150;
+        //Player_body.SetActive(false);
+        //Player_item_body.SetActive(true);
+    }
+    void Item_Check()
+    {
+        if (Shot_Count <= 0)
+            itemcheck = false;
+
+        if (itemcheck == false)
+        {
+            
+            Player_body.SetActive(true);
+            Player_item_body.SetActive(false);
+        }
+        else if (itemcheck==true)
+        {
+            Player_body.SetActive(false);
+            Player_item_body.SetActive(true);
+        }
+
+*/
         Player_body.SetActive(false);
         Player_item_body.SetActive(true);
         armsText.text = shootCount.ToString();
@@ -223,7 +252,7 @@ public class PlayerManager : MonoBehaviour
 
     public void pickoff_item()
     {
-        armsText.text = "<size=27>" + "¡Ä" + "</size>";
+        armsText.text = "<size=27>" + "âˆ" + "</size>";
         itemcheck = false;
         Player_item_body.SetActive(false);
         Player_body.SetActive(true);
@@ -249,7 +278,7 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == "Bossborder")
         {
             bosscheck = true;
-            gm.chkBossStage = true; // GM¿¡¼­ Boss Stage ChkÇÏ´Â º¯¼ö Ãß°¡
+            gm.chkBossStage = true; // GMì—ì„œ Boss Stage Chkí•˜ëŠ” ë³€ìˆ˜ ì¶”ê°€
         }
         if (collision.gameObject.tag == "border")
         {
