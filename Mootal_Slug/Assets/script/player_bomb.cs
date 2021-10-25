@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player_bomb : MonoBehaviour
 {
+    [SerializeField] private GameObject explosionPrefab = null;
     Rigidbody2D myrigidbody;
 
     public float bombSpeed;
@@ -31,6 +32,12 @@ public class player_bomb : MonoBehaviour
         count--;
         if (collision.gameObject.tag == "M_Enemy")
         {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -78,7 +78,15 @@ public class enemyControl : MonoBehaviour
             enemyIsAttackted();
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "P_Bomb")
+        {
+            e_isAttack = true;
+            for (int i = 0; i < 3; i++)
+                enemyIsAttackted();
+        }
+    }
     private void MoveTime()
     {
         moveTime -= Time.deltaTime;

@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae6ef3eee0e29d49bb8f189386ee50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacktedMiniPrefab: {fileID: 227520873026756257, guid: 6c9627d5fd4ef854ca2d0f5d5c204da7, type: 3}
   flashPrefab: {fileID: 4983549498096157580, guid: aa170a344f3e30341b2d5bdc5aa3dd80, type: 3}
 --- !u!95 &-6142907343738937045
 Animator:

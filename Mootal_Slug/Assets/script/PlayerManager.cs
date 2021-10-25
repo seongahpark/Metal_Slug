@@ -7,7 +7,7 @@ public class PlayerManager : MonoBehaviour
 {
     public GameManager gm;
     [SerializeField] private Text lifeText;
-    public static int life=2;
+    public static int life=3; //플레이어 생명 3으로 고정
 
     float speed = 3;
     float jumpForce = 500f;
@@ -47,7 +47,6 @@ public class PlayerManager : MonoBehaviour
     
     private void Awake()
     {
-        
         rb = GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
@@ -55,6 +54,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
+        life = 3;
         lifeText.text = "1UP = " + life.ToString(); // 생명 표시
         itemcheck = false;
         Player_item_body.SetActive(false);
@@ -183,14 +183,19 @@ public class PlayerManager : MonoBehaviour
     {
         if (ishittable == true)
         {
-            Diecheck = true;
-            Invoke("Respawnplayer", 2.5f);
+            if(!gm.gameOver) Invoke("Respawnplayer", 2.5f);
             ishittable = false;
             life--;
+            lifeText.text = "1UP = " + life.ToString(); // 생명 표시
             Stand.SetActive(false);
             Player_Down.SetActive(false);
             Player_Die.SetActive(true);
             //StartCoroutine("blink");
+            if(life  <= 0)
+            {
+                Diecheck = true;
+                gm.gameOver = true;
+            }
         }
     }
     void hittabletrue()
@@ -252,6 +257,12 @@ public class PlayerManager : MonoBehaviour
         {
             pickup_item();
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Debug.Log("DDD");
+            playerhit();
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
