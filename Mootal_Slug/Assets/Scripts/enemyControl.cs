@@ -26,7 +26,7 @@ public class enemyControl : MonoBehaviour
     public bool e_isAttack = false;
     public float blinkTime = 1.5f;
 
-    public static float maxEnemyHP = 100;
+    public static float maxEnemyHP = 300;
     [SerializeField] private float enemyHP = maxEnemyHP;
     private float enemyHP_10per = maxEnemyHP * 0.1f;
 
