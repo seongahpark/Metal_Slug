@@ -53,7 +53,14 @@ public class UFOEnemyControl : MonoBehaviour
             miniEnemyHp--;
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "P_Bomb")
+        {
+            StartCoroutine(ec.Blink(rend));
+            miniEnemyHp -= 3;
+        }
+    }
     private void Move()
     {
         posTime -= Time.deltaTime;

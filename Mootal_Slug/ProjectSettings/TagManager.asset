@@ -12,6 +12,8 @@ TagManager:
   - border
   - Bossborder
   - M_Enemy
+  - item
+  - P_Bomb
   layers:
   - Default
   - TransparentFX

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3810102778199899670}
   m_Layer: 0
   m_Name: bomb0
-  m_TagString: Untagged
+  m_TagString: P_Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3d7ccec8124e24285a708a94363077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 2770632398390232150, guid: fa3511f1e34c96f41866daadbc720499, type: 3}
   bombSpeed: 4
 --- !u!50 &2498346567778639514
 Rigidbody2D:

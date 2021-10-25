@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MissileControl : MonoBehaviour
 {
+    [SerializeField] private GameObject isAttacktedMiniPrefab = null;
     [SerializeField] private GameObject flashPrefab = null;
     private float speed = 2.0f;
     private float destroyTime = 3.0f;
@@ -31,6 +32,7 @@ public class MissileControl : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            Instantiate(isAttacktedMiniPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

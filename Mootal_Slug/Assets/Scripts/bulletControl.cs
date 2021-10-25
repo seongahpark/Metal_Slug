@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bulletControl : MonoBehaviour
 {
+    [SerializeField] private GameObject isAttacktedMiniPrefab = null;
     private float speed = 3f;
     private float lifeTime = 3f;
     bool isShoot = false;
@@ -32,6 +33,10 @@ public class bulletControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player") Destroy(gameObject);
+        if(collision.transform.tag == "Player")
+        {
+            Instantiate(isAttacktedMiniPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

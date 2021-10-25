@@ -132,3 +132,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6661a1d2579eb4ab5ca5bc34655af6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacktedMiniPrefab: {fileID: 227520873026756257, guid: 6c9627d5fd4ef854ca2d0f5d5c204da7, type: 3}
