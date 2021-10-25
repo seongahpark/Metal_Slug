@@ -11,7 +11,7 @@ public class playerBullet : MonoBehaviour
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        Invoke("DestroyBullet", 0.3f);
+        Invoke("DestroyBullet", 2f);
     }
 
    
@@ -54,6 +54,10 @@ public class playerBullet : MonoBehaviour
         if (collision.transform.tag == "M_Enemy")
         {
             Instantiate(isAttacktedMiniPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
+        if (collision.transform.tag == "bullet_border")
+        {
             Destroy(gameObject);
         }
     }

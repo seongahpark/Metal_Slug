@@ -24,19 +24,41 @@ public class playershoot : MonoBehaviour
     }
     void Update()
     {
+        if(Input.GetKey(KeyCode.Q)) Debug.Log("saf");
         shootbutton();
         playerbomb();
     }
     public void shoot()  //평상시
     {
+        if (PlayerManager.itemcheck==false)
         Instantiate(bullet, pos.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet, pos.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
+       
     }
     public void upshoot() //위를 보면서
     {
+        if (PlayerManager.itemcheck == false)
+            Instantiate(bullet2, pos2.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet2, pos2.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
         Instantiate(bullet2, pos2.position, transform.rotation);
     }
     public void jumpdownshoot() //점프중 아래를 보면서
     {
+        if (PlayerManager.itemcheck == false)
+            Instantiate(bullet3, pos3.position, transform.rotation);
+        else 
+        {
+            Instantiate(bullet3, pos3.position, transform.rotation);
+            PlayerManager.Shot_Count--;
+        }
         Instantiate(bullet3, pos3.position, transform.rotation);
     }
     private IEnumerator shoo_up1()
@@ -93,23 +115,27 @@ public class playershoot : MonoBehaviour
     }
     void playerbomb()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+       
+        if (Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("DDD");
             if (bombcount > 0)
             {
-                playerbody.anim.SetBool("bomb", true);
-                player_item_body.anim.SetBool("bomb", true);
+                playerbody.anim.SetTrigger("Bomb");
+                player_item_body.anim.SetTrigger("Bomb");
+                bombcount--;
             }
         }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
+        //if (Input.GetKeyUp(KeyCode.Z))
+        //{
 
-            playerbody.anim.SetBool("bomb", false);
-            player_item_body.anim.SetBool("bomb", false);
-        }
+        //    playerbody.anim.SetBool("bomb", false);
+        //    player_item_body.anim.SetBool("bomb", false);
+        //}
     }
     void bombshot()
     {
         Instantiate(bomb, bomppos.position, bomppos.rotation);
     }
+    
 }

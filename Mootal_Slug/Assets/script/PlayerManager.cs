@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static int life=3; //플레이어 생명 3으로 고정
 
     float speed = 3;
-    float jumpForce = 500f;
+    float jumpForce = 300f;
     float checkRadius = 0.35f; //레이 검사 범위
 
     bool isTouchRight; //오른쪽 끝에 도달했는지
@@ -35,11 +35,13 @@ public class PlayerManager : MonoBehaviour
     
 
     public static int jumpCount = 0;
+    public static int Shot_Count; //연사 횟수
 
     public bool PDown = false; //아랫 방향키 눌렷는지 
     public static bool isGround = false; //바닥에 닿았는지
     public static bool rayisGround ;
-    public static bool itemcheck;
+    public static bool itemcheck; //아이템을 먹은상태
+
 
     private Rigidbody2D rb;
     
@@ -55,6 +57,7 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         life = 3;
+        Shot_Count = 0;
         lifeText.text = "1UP = " + life.ToString(); // 생명 표시
         itemcheck = false;
         Player_item_body.SetActive(false);
@@ -76,7 +79,7 @@ public class PlayerManager : MonoBehaviour
             playerjump();
             playerdown();
         }
-
+        Item_Check();
         bossrespawn();
     }
     private void playermove()
@@ -187,9 +190,12 @@ public class PlayerManager : MonoBehaviour
             ishittable = false;
             life--;
             lifeText.text = "1UP = " + life.ToString(); // 생명 표시
+            itemcheck = false;
+            Shot_Count = 0;
             Stand.SetActive(false);
             Player_Down.SetActive(false);
             Player_Die.SetActive(true);
+            Diecheck = true;
             //StartCoroutine("blink");
             if(life  <= 0)
             {
@@ -208,13 +214,33 @@ public class PlayerManager : MonoBehaviour
         Player_Die.SetActive(false);
         Stand.SetActive(true);
         this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
+        playershoot.bombcount = 10;
         Invoke("hittabletrue", 1.5f);
     }
     void pickup_item()
     {
         itemcheck = true;
-        Player_body.SetActive(false);
-        Player_item_body.SetActive(true);
+        Shot_Count += 150;
+        //Player_body.SetActive(false);
+        //Player_item_body.SetActive(true);
+    }
+    void Item_Check()
+    {
+        if (Shot_Count <= 0)
+            itemcheck = false;
+
+        if (itemcheck == false)
+        {
+            
+            Player_body.SetActive(true);
+            Player_item_body.SetActive(false);
+        }
+        else if (itemcheck==true)
+        {
+            Player_body.SetActive(false);
+            Player_item_body.SetActive(true);
+        }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
