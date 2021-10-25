@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public GameManager gm;
+
     [SerializeField] private Text lifeText;
+    [SerializeField] private Text armsText;
     public static int life=3; //플레이어 생명 3으로 고정
 
     float speed = 3;
@@ -38,24 +40,24 @@ public class PlayerManager : MonoBehaviour
 
     public bool PDown = false; //아랫 방향키 눌렷는지 
     public static bool isGround = false; //바닥에 닿았는지
-    public static bool rayisGround ;
-    public static bool itemcheck;
+    public static bool rayisGround;
+    public static bool itemcheck = false;
+    public int shootCount = 1000; //아이템 총알 개수
 
     private Rigidbody2D rb;
-    
 
-    
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
-    
 
     void Start()
     {
         life = 3;
         lifeText.text = "1UP = " + life.ToString(); // 생명 표시
+        armsText.text = "<size=27>"+"∞"+"</size>";
+
         itemcheck = false;
         Player_item_body.SetActive(false);
         Diecheck = false;
@@ -210,11 +212,21 @@ public class PlayerManager : MonoBehaviour
         this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
         Invoke("hittabletrue", 1.5f);
     }
-    void pickup_item()
+    public void pickup_item()
     {
+        shootCount = 1000;
         itemcheck = true;
         Player_body.SetActive(false);
         Player_item_body.SetActive(true);
+        armsText.text = shootCount.ToString();
+    }
+
+    public void pickoff_item()
+    {
+        armsText.text = "<size=27>" + "∞" + "</size>";
+        itemcheck = false;
+        Player_item_body.SetActive(false);
+        Player_body.SetActive(true);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

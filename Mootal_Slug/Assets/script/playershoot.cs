@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playershoot : MonoBehaviour
 {
+    public PlayerManager pm;
+    [SerializeField] private Text armsText;
+
     public GameObject bullet;
     public GameObject bullet2;
     public GameObject bullet3;
@@ -15,12 +19,12 @@ public class playershoot : MonoBehaviour
     public Transform bomppos;
 
     public static int bombcount; //ÆøÅº°¹¼ö
-
     public static bool shootcheck = false;
 
     void Start()
     {
         bombcount = 10;
+        pm.shootCount = 1000;
     }
     void Update()
     {
@@ -80,7 +84,12 @@ public class playershoot : MonoBehaviour
             if (PlayerManager.itemcheck == false)
                 playerbody.anim.SetBool("Shoot", true);
             else if (PlayerManager.itemcheck == true)
+            {
                 player_item_body.anim.SetBool("Shoot", true);
+                pm.shootCount--;
+                armsText.text = pm.shootCount.ToString();
+                if (pm.shootCount <= 0) itemChk();
+            }
         }
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
@@ -111,5 +120,10 @@ public class playershoot : MonoBehaviour
     void bombshot()
     {
         Instantiate(bomb, bomppos.position, bomppos.rotation);
+    }
+
+    public void itemChk()
+    {
+        pm.pickoff_item();
     }
 }

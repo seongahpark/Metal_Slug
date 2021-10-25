@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfa364f488e0930429ea36a02ef62004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 380440794613226237, guid: 0ded6f900d7f1014aa03111c0b3b0b8e, type: 3}
   bulletPrefab: {fileID: 3536388987879862257, guid: 50cf51aa64d662942a3db19d6891d697, type: 3}
   ec: {fileID: 0}
   miniEnemyHp: 10
