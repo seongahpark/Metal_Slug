@@ -220,12 +220,8 @@ public class PlayerManager : MonoBehaviour
     }
     public void pickup_item()
     {
-        shootCount = 1000;
+        shootCount = 500;
         itemcheck = true;
-
-        //Shot_Count += 150;
-        //Player_body.SetActive(false);
-        //Player_item_body.SetActive(true);
     }
     void Item_Check()
     {
@@ -237,17 +233,16 @@ public class PlayerManager : MonoBehaviour
 
             Player_body.SetActive(true);
             Player_item_body.SetActive(false);
+            armsText.text = "<size=27>" + "∞" + "</size>";
         }
         else if (itemcheck == true)
         {
             Player_body.SetActive(false);
             Player_item_body.SetActive(true);
+            armsText.text = shootCount.ToString();
         }
-
-
         //Player_body.SetActive(false);
         //Player_item_body.SetActive(true);
-        armsText.text = shootCount.ToString();
     }
 
     public void pickoff_item()
