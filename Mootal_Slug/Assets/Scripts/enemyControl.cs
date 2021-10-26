@@ -63,6 +63,7 @@ public class enemyControl : MonoBehaviour
 
             if (enemyHP <= 0)
             {
+                PlayerManager.ishittable = false;
                 gm.gameClear = true;
                 isclear = true;
                 if (!deadMotion) enemyDeadMotion();

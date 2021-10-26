@@ -18,7 +18,6 @@ public class PlayerManager : MonoBehaviour
     bool isTouchRight; //오른쪽 끝에 도달했는지
     bool isTouchLeft; // 왼쪽 끝에 도달했는지
     bool bosscheck;   //보스 리스폰 지점 도달
-    bool ishittable;  //맞을수있는 상태인지
     bool Diecheck; //죽은 상태인지
 
 
@@ -41,6 +40,8 @@ public class PlayerManager : MonoBehaviour
     //public static int Shot_Count; //연사 횟수
 
     public bool PDown = false; //아랫 방향키 눌렷는지 
+
+    public static bool ishittable;  //맞을수있는 상태인지
     public static bool isGround = false; //바닥에 닿았는지
     public static bool rayisGround;
     public static bool itemcheck = false;
@@ -213,7 +214,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (life <= 0) return;
         Diecheck = false;
-        
+        playershoot.bombcount = 10;
         Player_Die.SetActive(false);
         Stand.SetActive(true);
         this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
@@ -298,7 +299,7 @@ public class PlayerManager : MonoBehaviour
 
         if (collision.gameObject.tag == "item_Bomb")
         {
-            playershoot.bombcount = 10;
+            playershoot.bombcount += 10;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Bullet")
