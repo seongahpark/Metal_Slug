@@ -154,9 +154,15 @@ public class PlayerManager : MonoBehaviour
             {
                 Stand.SetActive(false);
                 if (itemcheck == false)
+                {
+                    Player_item_Down.SetActive(false);
                     Player_Down.SetActive(true);
+                }
                 else if (itemcheck == true)
+                {
+                    Player_Down.SetActive(false);
                     Player_item_Down.SetActive(true);
+                }
             }
             else   //점프중 아래로
             {
@@ -196,6 +202,7 @@ public class PlayerManager : MonoBehaviour
             shootCount = 0;
             Stand.SetActive(false);
             Player_Down.SetActive(false);
+            Player_item_Down.SetActive(false);
             Player_Die.SetActive(true);
             Diecheck = true;
             //StartCoroutine("blink");
