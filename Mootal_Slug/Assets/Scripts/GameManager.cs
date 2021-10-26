@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
     public bool gameClear = false;
     public bool gameOverScreen = false;
+    public bool canBossAttack = false;
     //player x 좌표가 20이상일때부터 BOSS 모드 ON
     private void Awake()
     {
@@ -50,6 +51,7 @@ public class GameManager : MonoBehaviour
         gameOver = false;
         gameOverScreen = false;
         chkBossStage = false;
+        canBossAttack = false;
 }
 
     IEnumerator waitForChange()
