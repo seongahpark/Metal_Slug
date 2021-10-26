@@ -113,7 +113,6 @@ public class MiraEnemyControl : MonoBehaviour
     {
         dropChk = true;
         int rand = Random.Range(0, 100);
-        Debug.Log("rand " + rand);
         if (rand <= 30)
         {
             Instantiate(itemPrefab, transform.position, Quaternion.identity);

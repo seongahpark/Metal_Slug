@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MissileControl : MonoBehaviour
 {
+    public GameManager gm;
     [SerializeField] private GameObject isAttacktedMiniPrefab = null;
     [SerializeField] private GameObject flashPrefab = null;
     private float speed = 2.0f;
@@ -11,7 +12,7 @@ public class MissileControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,14 @@ public class MissileControl : MonoBehaviour
             Instantiate(flashPrefab, pos, Quaternion.identity);
             Destroy(gameObject);
         }
+
+        if (gm.gameClear || gm.gameOver) ChkGameOver();
+    }
+
+    private void ChkGameOver()
+    {
+        Instantiate(isAttacktedMiniPrefab, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

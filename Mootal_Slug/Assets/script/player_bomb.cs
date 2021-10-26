@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class player_bomb : MonoBehaviour
 {
+    public GameManager gm;
     [SerializeField] private GameObject explosionPrefab = null;
     Rigidbody2D myrigidbody;
 
@@ -14,6 +15,7 @@ public class player_bomb : MonoBehaviour
 
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         myrigidbody = GetComponent<Rigidbody2D>();
         myrigidbody.velocity = transform.right * bombSpeed;
         myrigidbody.AddForce(Vector2.up * 3f, ForceMode2D.Impulse);
@@ -37,7 +39,8 @@ public class player_bomb : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            if (gm.chkBossStage && gm.canBossAttack)
+                Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
