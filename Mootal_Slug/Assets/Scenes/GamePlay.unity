@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 147121315}
   - component: {fileID: 147121314}
   - component: {fileID: 147121313}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: e_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -696,7 +696,7 @@ GameObject:
   - component: {fileID: 302509692}
   - component: {fileID: 302509691}
   - component: {fileID: 302509690}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: e_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1035,7 +1035,7 @@ GameObject:
   - component: {fileID: 395543224}
   - component: {fileID: 395543223}
   - component: {fileID: 395543222}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: e_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   - component: {fileID: 403995647}
   - component: {fileID: 403995646}
   - component: {fileID: 403995648}
-  m_Layer: 8
+  m_Layer: 3
   m_Name: Map
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 464130216}
   - component: {fileID: 464130218}
   - component: {fileID: 464130217}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire3
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -1516,7 +1516,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22, y: 0.74, z: -10}
+  m_LocalPosition: {x: -21.878096, y: 0.74, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1227599133}
@@ -1826,7 +1826,7 @@ GameObject:
   - component: {fileID: 664424298}
   - component: {fileID: 664424300}
   - component: {fileID: 664424299}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire1
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -2723,7 +2723,7 @@ GameObject:
   - component: {fileID: 1239644769}
   - component: {fileID: 1239644771}
   - component: {fileID: 1239644770}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire5
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -3095,7 +3095,7 @@ GameObject:
   - component: {fileID: 1515401244}
   - component: {fileID: 1515401243}
   - component: {fileID: 1515401242}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: e_top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3504,7 +3504,7 @@ GameObject:
   - component: {fileID: 1634925117}
   - component: {fileID: 1634925119}
   - component: {fileID: 1634925118}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire4
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -3884,7 +3884,7 @@ GameObject:
   - component: {fileID: 1738632827}
   - component: {fileID: 1738632829}
   - component: {fileID: 1738632828}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire2
   m_TagString: Fire
   m_Icon: {fileID: 0}
@@ -4293,7 +4293,7 @@ GameObject:
   - component: {fileID: 1905712349}
   - component: {fileID: 1905712348}
   - component: {fileID: 1905712347}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: e_people
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4390,12 +4390,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905712346}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.316, y: 0.066, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.31600064, y: 0.06600001, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 1938645818}
-  m_RootOrder: 4
+  m_Father: {fileID: 2085400568}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1918462834
 PrefabInstance:
@@ -4465,7 +4465,7 @@ GameObject:
   - component: {fileID: 1938645818}
   - component: {fileID: 1938645817}
   - component: {fileID: 1938645816}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -4574,7 +4574,6 @@ Transform:
   - {fileID: 1515401241}
   - {fileID: 147121312}
   - {fileID: 395543221}
-  - {fileID: 1905712350}
   - {fileID: 2085400568}
   m_Father: {fileID: 0}
   m_RootOrder: 23
@@ -4937,7 +4936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085400568}
   - component: {fileID: 2085400569}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,8 +4959,9 @@ Transform:
   - {fileID: 464130216}
   - {fileID: 1634925117}
   - {fileID: 1239644769}
+  - {fileID: 1905712350}
   m_Father: {fileID: 1938645818}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2085400569
 MonoBehaviour:
@@ -5165,7 +5165,7 @@ MonoBehaviour:
   Player_item_Down: {fileID: 122431909}
   islayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 8
   raypos: {fileID: 510470998}
   shootCount: 1000
   PDown: 0
