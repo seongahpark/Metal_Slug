@@ -64,7 +64,7 @@ public class PlayerManager : MonoBehaviour
         itemcheck = false;
         Player_item_body.SetActive(false);
         Diecheck = false;
-        ishittable = false;
+        ishittable = true;
         Player_Down.SetActive(false);
         Player_Die.SetActive(false);
         Player_item_Down.SetActive(false);
