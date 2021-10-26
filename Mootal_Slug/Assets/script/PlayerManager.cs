@@ -211,6 +211,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void Respawnplayer()
     {
+        if (life <= 0) return;
         Diecheck = false;
         
         Player_Die.SetActive(false);

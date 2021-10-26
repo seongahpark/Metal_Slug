@@ -19076,8 +19076,8 @@ TextureImporter:
         y: 4718
         width: 24
         height: 34
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5136719, y: 0.35709158}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19097,8 +19097,8 @@ TextureImporter:
         y: 4719
         width: 23
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.52853394, y: 0.43067932}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19118,8 +19118,8 @@ TextureImporter:
         y: 4716
         width: 29
         height: 36
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.533945, y: 0.44662815}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19139,8 +19139,8 @@ TextureImporter:
         y: 4722
         width: 48
         height: 31
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.650397, y: 0.27521735}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19160,8 +19160,8 @@ TextureImporter:
         y: 4729
         width: 29
         height: 26
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.53394395, y: 0.08834135}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19181,8 +19181,8 @@ TextureImporter:
         y: 4729
         width: 29
         height: 25
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.55657536, y: 0.105}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19198,12 +19198,12 @@ TextureImporter:
       name: Neo Geo NGCD - Metal Slug - Marco Rossi 1_124
       rect:
         serializedVersion: 2
-        x: 622
+        x: 623
         y: 4729
         width: 29
         height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.51131463, y: 0.068359375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19223,8 +19223,8 @@ TextureImporter:
         y: 4729
         width: 29
         height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.59052145, y: 0.09986413}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19244,8 +19244,8 @@ TextureImporter:
         y: 4730
         width: 29
         height: 22
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.5792047, y: 0.08948863}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -19265,8 +19265,8 @@ TextureImporter:
         y: 4729
         width: 29
         height: 23
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 9
+      pivot: {x: 0.59052145, y: 0.12839673}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
