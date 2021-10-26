@@ -300,6 +300,7 @@ public class PlayerManager : MonoBehaviour
         if (collision.gameObject.tag == "item_Bomb")
         {
             playershoot.bombcount += 10;
+            if (playershoot.bombcount > 20) playershoot.bombcount = 20;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Bullet")
