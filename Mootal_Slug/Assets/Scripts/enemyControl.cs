@@ -205,7 +205,6 @@ public class enemyControl : MonoBehaviour
 
     public IEnumerator Blink(SpriteRenderer sr)
     {
-        Debug.Log("start blink");
         sr.color = new Color(1, 0.5f, 0.5f, 1);
         yield return new WaitForSeconds(blinkTime);
         sr.color = new Color(1, 1, 1, 1);
