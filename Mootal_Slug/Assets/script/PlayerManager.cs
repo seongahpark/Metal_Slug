@@ -19,6 +19,7 @@ public class PlayerManager : MonoBehaviour
     bool isTouchLeft; // 왼쪽 끝에 도달했는지
     bool bosscheck;   //보스 리스폰 지점 도달
     bool Diecheck; //죽은 상태인지
+    bool isGround = false; //바닥에 닿았는지
 
 
     public GameObject Stand; // 서있는 상태
@@ -42,7 +43,6 @@ public class PlayerManager : MonoBehaviour
     public bool PDown = false; //아랫 방향키 눌렷는지 
 
     public static bool ishittable;  //맞을수있는 상태인지
-    public static bool isGround = false; //바닥에 닿았는지
     public static bool rayisGround;
     public static bool itemcheck = false;
 
@@ -64,7 +64,7 @@ public class PlayerManager : MonoBehaviour
         itemcheck = false;
         Player_item_body.SetActive(false);
         Diecheck = false;
-        ishittable = true;
+        ishittable = false;
         Player_Down.SetActive(false);
         Player_Die.SetActive(false);
         Player_item_Down.SetActive(false);
@@ -256,7 +256,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground"||collision.gameObject.tag=="Enemy")
         {
             Debug.Log("aaa");
             jumpCount = 0;
@@ -312,7 +312,7 @@ public class PlayerManager : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Enemy")
         {
             Debug.Log("bbb");
             isGround = false;
