@@ -24,7 +24,7 @@ public class enemyControl : MonoBehaviour
     private bool isDelay = false;
     public bool isclear = false;
     public bool e_isAttack = false;
-    public float blinkTime = 1.5f;
+    public float blinkTime = 1.3f;
 
     public static float maxEnemyHP = 300;
     [SerializeField] private float enemyHP = maxEnemyHP;
@@ -46,6 +46,7 @@ public class enemyControl : MonoBehaviour
     {
         if (gm.chkBossStage && !gm.gameClear)
         {
+            if (transform.position.x < 28) gm.canBossAttack = true;
             MoveTime(); // 보스 움직임 / 멈춤 제어
             MoveState(); // 왼쪽, 오른쪽 방향 전환
             if (!isStop) EnemyMove(go_left);
@@ -73,7 +74,7 @@ public class enemyControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "P_Bullet" && enemyHP > 0 && gm.chkBossStage)
+        if(collision.transform.tag == "P_Bullet" && enemyHP > 0 && gm.chkBossStage && gm.canBossAttack)
         {
             e_isAttack = true;
             enemyIsAttackted();
@@ -204,6 +205,7 @@ public class enemyControl : MonoBehaviour
 
     public IEnumerator Blink(SpriteRenderer sr)
     {
+        Debug.Log("start blink");
         sr.color = new Color(1, 0.5f, 0.5f, 1);
         yield return new WaitForSeconds(blinkTime);
         sr.color = new Color(1, 1, 1, 1);

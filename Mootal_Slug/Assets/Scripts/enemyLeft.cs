@@ -12,6 +12,7 @@ public class enemyLeft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         animator = GetComponent<Animator>();
         rend = this.gameObject.GetComponent<SpriteRenderer>();
     }

@@ -222,7 +222,7 @@ public class PlayerManager : MonoBehaviour
     }
     public void pickup_item()
     {
-        shootCount += 150;
+        shootCount = 150;
         itemcheck = true;
     }
     void Item_Check()

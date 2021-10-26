@@ -38,7 +38,7 @@ public class playerDownBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Enemy" && gm.chkBossStage)
+        if (collision.transform.tag == "Enemy" && gm.chkBossStage && gm.canBossAttack)
         {
             Vector3 pos = this.transform.position;
             pos.y += 1.5f;
@@ -46,7 +46,7 @@ public class playerDownBullet : MonoBehaviour
             Instantiate(isAttacktedPrefab, pos, Quaternion.identity);
             Destroy(gameObject);
         }
-        if (collision.transform.tag == "Enemy" && !gm.chkBossStage)
+        if (collision.transform.tag == "Enemy" && !gm.chkBossStage && !gm.canBossAttack)
         {
             Destroy(gameObject);
         }
