@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         if ((gameClear || gameOver) && !gameOverScreen)
         {
+            Time.timeScale = 0.5f;
             gameOverScreen = true;
             StartCoroutine(waitForChange()); //3초 뒤 화면전환
         }
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
     IEnumerator waitForChange()
     {
         yield return new WaitForSeconds(3.0f);
+        Time.timeScale = 1;
         SceneManager.LoadScene(2);
     }
 }
