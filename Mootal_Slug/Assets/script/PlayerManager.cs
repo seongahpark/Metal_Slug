@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 
     [SerializeField] private Text lifeText;
     [SerializeField] private Text armsText;
-    public static int life=3; //플레이어 생명 3으로 고정
+
 
     float speed = 3;
     float jumpForce = 300f;
@@ -37,7 +37,10 @@ public class PlayerManager : MonoBehaviour
     
 
     public int shootCount = 0; //아이템 총알 개수
+
     public static int jumpCount = 0;
+    public static int life=3; //플레이어 생명 3으로 고정
+
     //public static int Shot_Count; //연사 횟수
 
     public bool PDown = false; //아랫 방향키 눌렷는지 
@@ -224,7 +227,7 @@ public class PlayerManager : MonoBehaviour
         playershoot.bombcount = 10;
         Player_Die.SetActive(false);
         Stand.SetActive(true);
-        this.transform.position = this.transform.position + new Vector3(0, 1f, 0);
+        this.transform.position = this.transform.position + new Vector3(-1f, 1f, 0);
         Invoke("hittabletrue", 1.5f);
     }
     public void pickup_item()
