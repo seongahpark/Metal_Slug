@@ -9,6 +9,7 @@ public class DownShoot : MonoBehaviour
 
 
     public PlayerManager pm;
+
     public GameObject bullet;
     public GameObject bomb;
 

@@ -8,6 +8,8 @@ public class item : MonoBehaviour
     void Start()
     {
         myrigid = GetComponent<Rigidbody2D>();
+        Invoke("Destroyitem", 10f);
+        Invoke("Blink", 7.5f);
     }
 
     // Update is called once per frame
@@ -17,8 +19,30 @@ public class item : MonoBehaviour
 
            
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
+    void Destroyitem()
+    {
+        
+        Destroy(gameObject);
+    }
+    void Blink()
+    {
+        StartCoroutine("blink");
+    }
+    public IEnumerator blink()
+    {
+
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        for (int i = 0; i < 30; i++)
+        {
+
+
+            sr.enabled = !sr.enabled;
+
+            yield return new WaitForSeconds(0.1f);
+
+        }
+    }
+        private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
